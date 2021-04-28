@@ -19,7 +19,8 @@
             </mat-form-field>
 
             <div class="buttons-container">
-                <button mat-button color="primary" class="has-account-button">
+                <button type="button" mat-button color="primary" class="has-account-button"
+                    (click)="redirectToSignUpPage()">
                     create account
                     <mat-icon>person_add</mat-icon>
                 </button>

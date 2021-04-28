@@ -4,7 +4,7 @@
 
     <div class="wrapper">
         <mat-card class="box">
-            <ng-container *ngIf="isLoading; else forms">
+            <ng-container *ngIf="loading; else forms">
                 <div class="spinner-container">
                     <mat-spinner [diameter]="50"></mat-spinner>
                 </div>

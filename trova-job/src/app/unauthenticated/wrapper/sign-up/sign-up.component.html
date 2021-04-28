@@ -37,7 +37,8 @@
 
         </mat-card-content>
         <div class="buttons-container">
-            <button mat-button color="primary" class="has-account-button">
+            <button type="button" mat-button color="primary" class="has-account-button"
+                (click)="redirectToSignInPage()">
                 Already has account
                 <mat-icon>tag_faces</mat-icon>
             </button>
