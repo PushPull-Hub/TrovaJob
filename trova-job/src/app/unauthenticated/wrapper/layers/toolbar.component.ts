@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +10,13 @@ import { Component } from '@angular/core';
     />
     <span> {{ 'Trova Job' | uppercase }}</span>
     <div class="spacer"></div>
-    <button mat-stroked-button class="access-button">Accedi</button>
+    <button
+      mat-stroked-button
+      class="access-button"
+      (click)="routeToSignInPage()"
+    >
+      Accedi
+    </button>
     <a
       target="_blank"
       href="https://github.com/PushPull-Hub/formazione-scai/tree/develop/trova-job"
@@ -61,4 +68,12 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class ToolBarComponent {}
+export class ToolBarComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {}
+
+  routeToSignInPage() {
+    this.router.navigateByUrl('authentication/sign-in');
+  }
+}
