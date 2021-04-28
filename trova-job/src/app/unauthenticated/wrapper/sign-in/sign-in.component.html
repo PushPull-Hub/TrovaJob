@@ -1,22 +1,33 @@
-<div class="login-wrapper">
+<mat-card-header>
+    <mat-card-title>LogIn</mat-card-title>
+</mat-card-header>
 
-    <mat-card class="box">
-        <mat-card-header>
-            <mat-card-title>Sign in</mat-card-title>
-        </mat-card-header>
+<div class="main-container">
+    <form class="form">
+        <mat-card-content>
 
-        <form class="example-form">
-            <mat-card-content>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Username">
-                </mat-form-field>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Email">
+                <mat-icon matSuffix color="primary">alternate_email</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password">
-                </mat-form-field>
-            </mat-card-content>
-            <button mat-stroked-button color="accent" class="btn-block">Log in</button>
-        </form>
-    </mat-card>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Password">
+                <mat-icon matSuffix color="primary">lock</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
+            <div class="buttons-container">
+                <button mat-button color="primary" class="has-account-button">
+                    create account
+                    <mat-icon>person_add</mat-icon>
+                </button>
+                <button mat-raised-button color="primary">
+                    Log in
+                </button>
+            </div>
+
+        </mat-card-content>
+    </form>
 </div>

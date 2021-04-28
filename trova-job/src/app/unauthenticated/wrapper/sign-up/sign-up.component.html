@@ -1,54 +1,52 @@
-<div class="login-wrapper">
-    <mat-card class="box">
-        <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
-        </mat-card-header>
+<mat-card-header>
+    <mat-card-title>Register</mat-card-title>
+</mat-card-header>
+<div class="main-container">
+    <form class="form">
 
-        <form class="example-form">
+        <mat-card-content>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Username">
+                <mat-icon matSuffix color="primary">person_pin</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
-            <mat-card-content>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Username">
-                    <mat-icon matSuffix color="primary">person_pin</mat-icon>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Email">
+                <mat-icon matSuffix color="primary">alternate_email</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email">
-                    <mat-icon matSuffix color="primary">alternate_email</mat-icon>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Password">
+                <mat-icon matSuffix color="primary">lock</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password">
-                    <mat-icon matSuffix color="primary">lock</mat-icon>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Adress">
+                <mat-icon matSuffix color="primary">home</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Adress">
-                    <mat-icon matSuffix color="primary">home</mat-icon>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
+            <mat-form-field class="w-100">
+                <input matInput placeholder="phone-number">
+                <mat-icon matSuffix color="primary">phone</mat-icon>
+                <mat-hint></mat-hint>
+            </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="phone-number">
-                    <mat-icon matSuffix color="primary">phone</mat-icon>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
+        </mat-card-content>
+        <div class="buttons-container">
+            <button mat-button color="primary" class="has-account-button">
+                Already has account
+                <mat-icon>tag_faces</mat-icon>
+            </button>
 
-            </mat-card-content>
-            <div class="buttons-container">
-                <button mat-button color="primary" class="has-account-button">
-                    Already has account
-                    <mat-icon>tag_faces</mat-icon>
-                </button>
+            <button mat-raised-button color="primary">
+                sign up
+                <mat-icon>person_add</mat-icon>
+            </button>
+        </div>
+    </form>
 
-                <button mat-raised-button color="primary">
-                    sign up
-                    <mat-icon>person_add</mat-icon>
-                </button>
-            </div>
-        </form>
-    </mat-card>
 </div>
