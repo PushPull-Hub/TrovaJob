@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { UnauthenticatedRoutingModule } from './unauthenticated-routing.module';
 
+// App Components
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { SignUpComponent } from './wrapper/sign-up/sign-up.component';
@@ -18,6 +19,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CloudSvg } from './wrapper/layers/cloud-svg.component';
+import { ToolBarComponent } from './wrapper/layers/toolbar.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -28,6 +32,7 @@ const AngularMaterialModules = [
   MatDatepickerModule,
   MatIconModule,
   MatNativeDateModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({
@@ -36,6 +41,8 @@ const AngularMaterialModules = [
     SignInComponent,
     SignUpComponent,
     WelcomePageComponent,
+    CloudSvg,
+    ToolBarComponent,
   ],
   imports: [
     CommonModule,
