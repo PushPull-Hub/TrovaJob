@@ -1,0 +1,35 @@
+.main-container {
+  margin-bottom: 20px;
+}
+
+mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 700;
+  color: #303f9f;
+}
+
+.form {
+  margin: 2rem 0;
+  min-width: 100%;
+  max-width: 300px;
+  width: 100%;
+}
+
+.form {
+  mat-form-field {
+    padding: 0.7rem 0.2rem;
+  }
+}
+
+.buttons-container {
+  float: right;
+  margin: 10px 0 0 0;
+}
+
+.buttons-container {
+  .has-account-button {
+    margin-right: 1rem;
+  }
+}
