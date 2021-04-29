@@ -9,10 +9,8 @@ export class User extends Object {
   phoneNumber: number;
 }
 
-interface Birthday {
-  day: number;
-  month: number;
-  year: number;
+export class Birthday {
+  constructor(public day: number, public month: number, public year: number) {}
 }
 
 type Role = 'admin' | 'user';
