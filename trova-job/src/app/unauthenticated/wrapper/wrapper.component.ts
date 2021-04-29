@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { AuthenticationService } from '../service/authentication.service';
+import { AuthenticationService } from '../../service/authentication.service';
 
 @Component({
   selector: 'app-unauthenticated-components-wrapper',
