@@ -15,6 +15,10 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  signUp() {
+    this.authenticationService.signUp();
+  }
+
   redirectToSignInPage() {
     this.authenticationService.isSomeFormLoading.next(true);
     setTimeout(() => {
