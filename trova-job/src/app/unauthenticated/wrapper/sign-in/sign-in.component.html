@@ -3,17 +3,19 @@
 </mat-card-header>
 
 <div class="main-container">
-    <form class="form">
+    <form class="form" #f="ngForm" (ngSubmit)="signIn(f)">
         <mat-card-content>
 
             <mat-form-field class="w-100">
-                <input matInput placeholder="Email">
+                <input matInput placeholder="Email" type="email" class="form-control" name="email" ngModel required
+                    #email="ngModel">
                 <mat-icon matSuffix color="primary">alternate_email</mat-icon>
                 <mat-hint></mat-hint>
             </mat-form-field>
 
             <mat-form-field class="w-100">
-                <input matInput placeholder="Password">
+                <input matInput placeholder="Password" type="password" class="form-control" name="password" ngModel
+                    required #password="ngModel">
                 <mat-icon matSuffix color="primary">lock</mat-icon>
                 <mat-hint></mat-hint>
             </mat-form-field>
@@ -24,7 +26,7 @@
                     create account
                     <mat-icon>person_add</mat-icon>
                 </button>
-                <button mat-raised-button color="primary" (click)="signIn()">
+                <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">
                     Log in
                 </button>
             </div>

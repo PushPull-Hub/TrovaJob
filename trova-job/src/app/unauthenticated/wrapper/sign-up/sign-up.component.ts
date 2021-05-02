@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from '../../../service/authentication.service';
 
 @Component({
@@ -8,15 +10,27 @@ import { AuthenticationService } from '../../../service/authentication.service';
   styleUrls: ['../layers/forms-styles.scss'],
 })
 export class SignUpComponent implements OnInit {
+  isCreatingAccount: boolean;
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isCreatingAccount = false;
+  }
 
-  signUp() {
-    this.authenticationService.signUp();
+  signUp(form: NgForm) {
+    this.isCreatingAccount = true;
+    let user = new User();
+
+    user.email = form.value.email;
+    user.password = form.value.password;
+    user.username = form.value.username;
+    user.adress = form.value.adess;
+    user.phoneNumber = form.value.phoneNumber;
+
+    form.reset();
   }
 
   redirectToSignInPage() {

@@ -27,16 +27,16 @@ export class AuthenticationService {
     this.router.navigateByUrl('home/find-jobs');
   }
 
-  signUp() {
-    const user = new User();
-    user.id = '123456';
-    user.email = 'test@gmail.com';
-    user.username = 'firstName secondName';
-    user.adress = ' Via Maroncelli Numero: 60';
-    user.phoneNumber = +39123456789;
-    user.birthday = new Birthday(10, 10, 1999);
-    user.role = 'admin';
-    this.loggedInUser.next(user);
+  signUp(user: User) {
+    // const user = new User();
+    // user.id = '123456';
+    // user.email = 'test@gmail.com';
+    // user.username = 'firstName secondName';
+    // user.adress = ' Via Maroncelli Numero: 60';
+    // user.phoneNumber = +39123456789;
+    // user.birthday = new Birthday(10, 10, 1999);
+    // user.role = 'admin';
+    // this.loggedInUser.next(user);
     this.router.navigateByUrl('home/find-jobs');
   }
 
