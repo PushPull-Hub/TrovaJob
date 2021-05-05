@@ -9,7 +9,7 @@
                 <input matInput placeholder="Username" class="form-control" name="username" ngModel required
                     #username="ngModel">
                 <mat-icon matSuffix color="primary">person_pin</mat-icon>
-                <mat-hint></mat-hint>
+                <mat-hint *ngIf="isThereError">{{ errorMessage}}</mat-hint>
             </mat-form-field>
 
             <mat-form-field class="w-100">

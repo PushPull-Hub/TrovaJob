@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user.model';
+
 import { AuthenticationService } from '../../../services/authentication.service';
-import { v4 as uuidv4 } from 'uuid';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,17 +11,32 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['../layers/forms-styles.scss'],
 })
 export class SignUpComponent implements OnInit {
-  isCreatingAccount: boolean;
+  isThereError: boolean;
+  errorMessage: string;
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.isCreatingAccount = false;
+    this.isThereError = false;
+    this.errorMessage = 'An error occured during sign up process - try again';
   }
 
-  generateUserFromInputs(form: NgForm): User {
+  signUp(form: NgForm) {
+    const user = this.generateUserFromInputs(form);
+    this.authenticationService
+      .signUp(user)
+      .then((response) =>
+        response
+          ? this.router.navigateByUrl('home')
+          : (this.isThereError = true)
+      )
+      .catch((error) => (this.isThereError = true))
+      .finally(() => form.reset());
+  }
+
+  private generateUserFromInputs(form: NgForm): User {
     let user = new User();
     user.email = form.value.email;
     user.password = form.value.password;
@@ -35,12 +50,6 @@ export class SignUpComponent implements OnInit {
       year: 0,
     };
     return user;
-  }
-
-  signUp(form: NgForm) {
-    const user = this.generateUserFromInputs(form);
-    this.authenticationService.signUp(user);
-    form.reset();
   }
 
   redirectToSignInPage() {
