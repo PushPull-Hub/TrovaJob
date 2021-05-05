@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../../../service/authentication.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,17 +9,29 @@ import { AuthenticationService } from '../../../service/authentication.service';
   styleUrls: ['../layers/forms-styles.scss'],
 })
 export class SignInComponent implements OnInit {
+  isThereError: boolean;
+  errorMessage: string;
+
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isThereError = false;
+    this.errorMessage = null;
+  }
 
-  signIn(form: NgForm) {
-    console.log(form);
-
-    this.authenticationService.signIn();
+  async signIn(form: NgForm) {
+    await this.authenticationService
+      .signIn(form.value.email, form.value.password)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        this.isThereError = true;
+        this.errorMessage = error.message;
+      });
   }
 
   redirectToSignUpPage() {

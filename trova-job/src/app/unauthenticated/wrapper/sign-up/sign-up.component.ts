@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
-import { AuthenticationService } from '../../../service/authentication.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -29,6 +29,10 @@ export class SignUpComponent implements OnInit {
     user.username = form.value.username;
     user.adress = form.value.adess;
     user.phoneNumber = form.value.phoneNumber;
+    this.authenticationService
+      .signUp(user)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
 
     form.reset();
   }
