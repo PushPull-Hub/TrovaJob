@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from '../../../services/authentication.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-sign-up',
@@ -20,20 +21,25 @@ export class SignUpComponent implements OnInit {
     this.isCreatingAccount = false;
   }
 
-  signUp(form: NgForm) {
-    this.isCreatingAccount = true;
+  generateUserFromInputs(form: NgForm): User {
     let user = new User();
-
     user.email = form.value.email;
     user.password = form.value.password;
     user.username = form.value.username;
-    user.adress = form.value.adess;
+    user.adress = form.value.adress;
     user.phoneNumber = form.value.phoneNumber;
-    this.authenticationService
-      .signUp(user)
-      .then((result) => console.log(result))
-      .catch((error) => console.log(error));
+    user.role = 'user';
+    user.birthday = {
+      day: 0,
+      month: 0,
+      year: 0,
+    };
+    return user;
+  }
 
+  signUp(form: NgForm) {
+    const user = this.generateUserFromInputs(form);
+    this.authenticationService.signUp(user);
     form.reset();
   }
 
