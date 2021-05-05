@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/service/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-wrapper',
@@ -7,9 +7,7 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
   styleUrls: ['./wrapper.component.scss'],
 })
 export class WrapperComponent implements OnInit {
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.authenticationService.signIn();
-  }
+  ngOnInit(): void {}
 }
