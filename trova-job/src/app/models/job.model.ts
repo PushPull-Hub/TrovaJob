@@ -1,7 +1,17 @@
-export class Job extends Object {
+export class Job {
+  id: number;
   companyName: string;
   city: string;
   field: string;
-  shareCapital: number;
+  shareCapital: string;
   phoneNumber: number;
+  request: CompanyJobRequest;
+}
+
+export class CompanyJobRequest extends Array {
+  field: string;
+  postRequested: string;
+  salryRange: string;
+  cvLoaderWebsite: string;
+  description: string;
 }
