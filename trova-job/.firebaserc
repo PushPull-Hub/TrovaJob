@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "torinotrovajob-edc2a": {
+      "hosting": {
+        "trova-job": [
+          "torinotrovajob-edc2a"
+        ]
+      }
+    }
+  }
+}
