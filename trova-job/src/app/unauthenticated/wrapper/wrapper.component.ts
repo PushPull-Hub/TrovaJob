@@ -13,7 +13,7 @@ export class WrapperComponent implements OnInit, OnDestroy {
   constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
-    this.formLoadingSubscription = this.authenticationService.isSomeFormLoading.subscribe(
+    this.formLoadingSubscription = this.authenticationService.isFormLoading.subscribe(
       (value: boolean) => (this.loading = value)
     );
   }
