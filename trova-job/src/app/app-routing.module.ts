@@ -20,7 +20,7 @@ const routes: Routes = [
         (m) => m.AuthenticatedModule
       ),
   },
-  { path: '', redirectTo: 'authentication/welcome-page', pathMatch: 'full' },
+  { path: '', redirectTo: 'home/find-jobs', pathMatch: 'full' },
 ];
 
 @NgModule({
