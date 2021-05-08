@@ -6,7 +6,7 @@ import { HomeComponent } from './wrapper/home/home.component';
 import { NavbarComponent } from './wrapper/navbar/navbar.component';
 import { ProfileComponent } from './wrapper/profile/profile.component';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { AuthenticatedRoutingModule } from './authenticated-routing.module';
 
 // Angular Material

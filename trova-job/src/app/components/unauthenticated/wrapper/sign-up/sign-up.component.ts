@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../../../services/authentication.service';
+import { AuthenticationService } from '../../../../services/authentication.service';
 import { User } from 'src/app/models/user.model';
 import { Subscription } from 'rxjs';
 import { ErrorService } from 'src/app/services/error.service';

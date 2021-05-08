@@ -5,14 +5,14 @@ const routes: Routes = [
   {
     path: 'authentication',
     loadChildren: () =>
-      import('./unauthenticated/unauthenticated.module').then(
+      import('./components/unauthenticated/unauthenticated.module').then(
         (m) => m.UnauthenticatedModule
       ),
   },
   {
     path: 'home',
     loadChildren: () =>
-      import('./authenticated/authenticated.module').then(
+      import('./components/authenticated/authenticated.module').then(
         (m) => m.AuthenticatedModule
       ),
   },

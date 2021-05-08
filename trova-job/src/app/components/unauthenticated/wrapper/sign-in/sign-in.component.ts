@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ErrorService } from 'src/app/services/error.service';
 import { MapperFunctionsService } from 'src/app/services/helper.service';
-import { AuthenticationService } from '../../../services/authentication.service';
+import { AuthenticationService } from '../../../../services/authentication.service';
 
 @Component({
   selector: 'app-sign-in',
