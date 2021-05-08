@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+
 import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
+
 import { CompanyJobRequest, Job } from '../models/job.model';
 
 @Injectable({

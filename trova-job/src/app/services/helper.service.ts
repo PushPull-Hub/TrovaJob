@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+
 import { User } from '../models/user.model';
 
 type applicationPaths =
@@ -33,15 +35,17 @@ export class TrovaJobHelperService {
   convertFirebaseObjectToUserObject(firebaseObject: {
     [key: string]: any;
   }): Promise<User> {
-    const user = new User();
-    user.adress = firebaseObject.adress ?? null;
-    user.birthday = firebaseObject.birthday ?? null;
-    user.email = firebaseObject.email ?? null;
-    user.password = firebaseObject.password ?? null;
-    user.phoneNumber = firebaseObject.phoneNumber ?? null;
-    user.role = firebaseObject.role ?? null;
-    user.id = firebaseObject.id ?? null;
-    user.username = firebaseObject.username ?? null;
+    let user = new User();
+    firebaseObject
+      ? ((user.adress = firebaseObject.adress ?? null),
+        (user.birthday = firebaseObject.birthday ?? null),
+        (user.email = firebaseObject.email ?? null),
+        (user.password = firebaseObject.password ?? null),
+        (user.phoneNumber = firebaseObject.phoneNumber ?? null),
+        (user.role = firebaseObject.role ?? null),
+        (user.id = firebaseObject.id ?? null),
+        (user.username = firebaseObject.username ?? null))
+      : (user = null);
     return of(user).toPromise();
   }
 

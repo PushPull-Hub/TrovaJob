@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Job } from '../models/job.model';
+
 import { JobsOffertsService } from './jobs-offerts.service';
-import { UserService } from './user.service';
+import { Job } from '../models/job.model';
 
 @Injectable({
   providedIn: 'root',
