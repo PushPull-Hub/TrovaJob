@@ -3,8 +3,8 @@ export class CustomErrorObject {
   errorMessage: string;
   status?: number;
 
-  constructor(isThereError: boolean, errorMessage: string, status?: number) {
-    this.isThereError = isThereError;
+  constructor(errorMessage: string, status?: number) {
+    this.isThereError = true;
     this.errorMessage = errorMessage;
     this.status = status;
   }
