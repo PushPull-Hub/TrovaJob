@@ -19,9 +19,10 @@ export class AuthenticationService {
     private angularFireAuth: AngularFireAuth,
     private angularFirestore: AngularFirestore,
     private helperFunctionsService: MapperFunctionsService,
-    private errorService: ErrorService,
-    private router: Router
-  ) {}
+    private errorService: ErrorService
+  ) {
+    this.isAuthenticated();
+  }
 
   signIn(email: string, password: string) {
     this.angularFireAuth
@@ -59,6 +60,7 @@ export class AuthenticationService {
       .signOut()
       .then(() => {
         this.loggedInUser.next(null);
+        localStorage.removeItem('user');
         this.helperFunctionsService.redirectTo('authentication/sign-in');
       })
       .catch((error) => console.log(error));
@@ -95,6 +97,7 @@ export class AuthenticationService {
             data
           );
           this.loggedInUser.next(user);
+          localStorage.setItem('user', JSON.stringify(user));
           this.helperFunctionsService.redirectTo('home');
         } catch (error) {
           const customError = new CustomErrorObject(
@@ -105,5 +108,9 @@ export class AuthenticationService {
           this.errorService.errorOnSignIn.next(customError);
         }
       });
+  }
+
+  isAuthenticated() {
+    return localStorage.getItem('user') ? true : false;
   }
 }
