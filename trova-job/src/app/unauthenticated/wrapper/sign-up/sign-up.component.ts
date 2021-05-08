@@ -1,39 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../../services/authentication.service';
 import { User } from 'src/app/models/user.model';
+import { Subscription } from 'rxjs';
+import { ErrorService } from 'src/app/services/error.service';
+import { MapperFunctionsService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['../layers/forms-styles.scss'],
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnDestroy {
   isThereError: boolean;
   errorMessage: string;
+  listeningToErrors: Subscription;
+
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router
+    private errorService: ErrorService,
+    private helperService: MapperFunctionsService
   ) {}
 
   ngOnInit(): void {
-    this.isThereError = false;
-    this.errorMessage = 'An error occured during sign up process - try again';
+    this.listenToErrors();
+    this.listeningToErrors = this.listenToErrors();
   }
 
   signUp(form: NgForm) {
     const user = this.generateUserFromInputs(form);
-    this.authenticationService
-      .signUp(user)
-      .then((response) =>
-        response
-          ? this.router.navigateByUrl('home')
-          : (this.isThereError = true)
-      )
-      .catch((error) => (this.isThereError = true))
-      .finally(() => form.reset());
+    this.authenticationService.signUp(user);
+  }
+
+  private listenToErrors() {
+    return this.errorService.errorOnSignIn.subscribe((error) => {
+      if (error) {
+        this.isThereError = true;
+        this.errorMessage = error.errorMessage;
+      } else {
+        this.isThereError = false;
+        this.errorMessage = null;
+      }
+    });
   }
 
   private generateUserFromInputs(form: NgForm): User {
@@ -53,10 +63,14 @@ export class SignUpComponent implements OnInit {
   }
 
   redirectToSignInPage() {
-    this.authenticationService.isSomeFormLoading.next(true);
+    this.authenticationService.isFormLoading.next(true);
     setTimeout(() => {
-      this.authenticationService.isSomeFormLoading.next(false);
-      this.router.navigateByUrl('authentication/sign-in');
+      this.authenticationService.isFormLoading.next(false);
+      this.helperService.redirectTo('authentication/sign-in');
     }, 800);
+  }
+
+  ngOnDestroy() {
+    this.listeningToErrors ? this.listeningToErrors.unsubscribe() : null;
   }
 }
