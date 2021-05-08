@@ -12,7 +12,7 @@ type applicationPaths =
 @Injectable({
   providedIn: 'root',
 })
-export class MapperFunctionsService {
+export class TrovaJobHelperService {
   constructor(private router: Router) {}
 
   createUserObjectFromUserCustomClass(

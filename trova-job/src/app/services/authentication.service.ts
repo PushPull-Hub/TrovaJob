@@ -4,7 +4,7 @@ import { BehaviorSubject, of } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { MapperFunctionsService } from './helper.service';
+import { TrovaJobHelperService } from './helper.service';
 import { CustomErrorObject } from '../models/error.model';
 import { ErrorService } from './error.service';
 
@@ -18,7 +18,7 @@ export class AuthenticationService {
   constructor(
     private angularFireAuth: AngularFireAuth,
     private angularFirestore: AngularFirestore,
-    private helperFunctionsService: MapperFunctionsService,
+    private helperFunctionsService: TrovaJobHelperService,
     private errorService: ErrorService
   ) {
     this.isAuthenticated();

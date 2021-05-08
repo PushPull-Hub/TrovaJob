@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from '../models/user.model';
-import { MapperFunctionsService } from './helper.service';
+import { TrovaJobHelperService } from './helper.service';
 
 @Injectable({ providedIn: 'root' })
 export class FireStoreCustomService {
   constructor(
     private angularFirestore: AngularFirestore,
-    private helperFunctionsService: MapperFunctionsService
+    private helperFunctionsService: TrovaJobHelperService
   ) {}
 
   async createUserOnFireStore(

@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../services/authentication.service';
-import { MapperFunctionsService } from '../services/helper.service';
+import { TrovaJobHelperService } from '../services/helper.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ import { MapperFunctionsService } from '../services/helper.service';
 export class AuthenticatedGuard implements CanActivate {
   constructor(
     private authenticationService: AuthenticationService,
-    private helperService: MapperFunctionsService
+    private helperService: TrovaJobHelperService
   ) {}
   canActivate(
     next: ActivatedRouteSnapshot,

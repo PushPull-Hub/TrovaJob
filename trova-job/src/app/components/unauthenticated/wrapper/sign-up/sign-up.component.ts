@@ -6,7 +6,7 @@ import { AuthenticationService } from '../../../../services/authentication.servi
 import { User } from 'src/app/models/user.model';
 import { Subscription } from 'rxjs';
 import { ErrorService } from 'src/app/services/error.service';
-import { MapperFunctionsService } from 'src/app/services/helper.service';
+import { TrovaJobHelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
   constructor(
     private authenticationService: AuthenticationService,
     private errorService: ErrorService,
-    private helperService: MapperFunctionsService
+    private helperService: TrovaJobHelperService
   ) {}
 
   ngOnInit(): void {
