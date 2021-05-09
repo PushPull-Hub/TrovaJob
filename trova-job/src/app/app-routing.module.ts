@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'authentication',
     canActivate: [UnauthenticatedGuard],
     loadChildren: () =>
-      import('./components/unauthenticated/unauthenticated.module').then(
+      import('./components/unauthenticated-module/unauthenticated.module').then(
         (m) => m.UnauthenticatedModule
       ),
   },
@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'home',
     canActivate: [AuthenticatedGuard],
     loadChildren: () =>
-      import('./components/authenticated/authenticated.module').then(
+      import('./components/authenticated-module/authenticated.module').then(
         (m) => m.AuthenticatedModule
       ),
   },
