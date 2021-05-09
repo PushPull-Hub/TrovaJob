@@ -25,8 +25,15 @@ export class AuthenticatedGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.authenticationService.isAuthenticated()
-      ? true
-      : (this.helperService.redirectTo('authentication/sign-in'), false);
+    return this.authenticationService
+      .isAuthenticated()
+      .then((authenticated: boolean) => {
+        if (authenticated) {
+          return true;
+        } else {
+          this.helperService.redirectTo('authentication/sign-in');
+          return false;
+        }
+      });
   }
 }

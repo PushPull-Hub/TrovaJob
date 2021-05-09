@@ -52,12 +52,4 @@ export class TrovaJobHelperService {
   redirectTo(path: applicationPaths) {
     this.router.navigateByUrl(path);
   }
-
-  storeOnLocalStorage(key: string, value: any) {
-    localStorage.setItem(key, JSON.stringify(value));
-  }
-
-  getFromLocalStorage(key: string): any {
-    return localStorage.getItem(JSON.parse(key));
-  }
 }

@@ -13,7 +13,10 @@ import { TrovaJobHelperService } from '../services/helper.service';
   providedIn: 'root',
 })
 export class UnauthenticatedGuard implements CanActivate {
-  constructor(private helperService: TrovaJobHelperService) {}
+  constructor(
+    private helperService: TrovaJobHelperService,
+    private authenticationService: AuthenticationService
+  ) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -22,8 +25,15 @@ export class UnauthenticatedGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return localStorage.getItem('user')
-      ? (this.helperService.redirectTo('home'), false)
-      : true;
+    return this.authenticationService
+      .isAuthenticated()
+      .then((authenticated: boolean) => {
+        if (authenticated) {
+          this.helperService.redirectTo('home');
+          return false;
+        } else {
+          return true;
+        }
+      });
   }
 }

@@ -21,13 +21,11 @@ export class AuthenticationService {
     private angularFirestore: FireStoreCustomService,
     private helperFunctionsService: TrovaJobHelperService,
     private errorService: ErrorService
-  ) {
-    this.isAuthenticated();
-  }
+  ) {}
 
-  isAuthenticated() {
-    return localStorage.getItem('user') ? true : false;
-  }
+  // isAuthenticated() {
+  //   return localStorage.getItem('user') ? true : false;
+  // }
 
   signIn(email: string, password: string): void {
     this.angularFireAuth
@@ -40,8 +38,7 @@ export class AuthenticationService {
             400
           );
           user
-            ? (localStorage.setItem('user', JSON.stringify(user)),
-              this.loggedInUser.next(user),
+            ? (this.loggedInUser.next(user),
               this.helperFunctionsService.redirectTo('home'))
             : this.errorService.errorOnSignIn.next(possibleError);
         } catch (err) {
@@ -64,7 +61,7 @@ export class AuthenticationService {
               user,
               fireAuthResponse.user.uid
             );
-            this.helperFunctionsService.storeOnLocalStorage('user', user);
+            // this.helperFunctionsService.storeOnLocalStorage('user', user);
             this.loggedInUser.next(savedUserOnFireStore);
             this.helperFunctionsService.redirectTo('home');
           }
@@ -89,5 +86,25 @@ export class AuthenticationService {
         );
         this.errorService.errorOnSignOut.next(customError);
       });
+  }
+
+  isAuthenticated(): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.loggedInUser.subscribe((value) => {
+        if (value && value.id) {
+          resolve(true);
+        } else {
+          this.angularFireAuth.onAuthStateChanged(async (user) => {
+            if (user && user.uid) {
+              const userData = await this.angularFirestore.getLoggedInUserDataFromFireStore();
+              this.loggedInUser.next(userData);
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          });
+        }
+      });
+    });
   }
 }
