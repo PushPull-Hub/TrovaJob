@@ -167,5 +167,50 @@
       "birthday": "15/07/1999",
       "phoneNumber": 2145246
     }
-  ]
+  ],
+  "abilities": {
+    "admin": {
+      "canReadUsers": true,
+      "canCreateUsers": true,
+      "canUpdateUsers": true,
+      "canDeleteteUsers": true,
+      "canReadJobs": true,
+      "canCreateJobs": true,
+      "canUpdateJobs": true,
+      "canDeleteJobs": true,
+      "canReadJob": true,
+      "canCreateJob": true,
+      "canUpdateJob": true,
+      "canDeleteJob": true,
+      "canUpdateProfile": true
+    },
+    "user": {
+      "canReadUsers": false,
+      "canCreateUsers": false,
+      "canUpdateUsers": false,
+      "canDeleteteUsers": false,
+      "canReadJobs": true,
+      "canCreateJobs": false,
+      "canUpdateJobs": false,
+      "canDeleteJobs": false,
+      "canCreateJob": false,
+      "canUpdateJob": false,
+      "canDeleteJob": false,
+      "canUpdateProfile": true
+    },
+    "company": {
+      "canReadUsers": false,
+      "canCreateUsers": false,
+      "canUpdateUsers": false,
+      "canDeleteteUsers": false,
+      "canReadJobs": true,
+      "canCreateJobs": false,
+      "canUpdateJobs": false,
+      "canDeleteJobs": false,
+      "canCreateJob": true,
+      "canUpdateJob": true,
+      "canDeleteJob": true,
+      "canUpdateProfile": true
+    }
+  }
 }
