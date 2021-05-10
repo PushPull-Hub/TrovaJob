@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { faUserShield } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +13,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   getLoggedUserSubscription: Subscription;
   loggedUserRole: 'user' | 'admin';
   isThereError: boolean;
+  adminUserIcon: any;
 
   constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.isThereError = false;
     this.getLoggedUserSubscription = this.getLoggedUserRole();
+    this.adminUserIcon = faUserShield;
   }
 
   private getLoggedUserRole() {
