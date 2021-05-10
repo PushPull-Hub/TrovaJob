@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CardComponent } from '../dynamic-components/card/card.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 const AngularMaterialModules = [
   MatCardModule,
   MatButtonModule,
@@ -46,6 +48,7 @@ const AngularMaterialModules = [
     AuthenticatedRoutingModule,
     SharedModule,
     ...AngularMaterialModules,
+    FontAwesomeModule,
   ],
 })
 export class AuthenticatedModule {}
