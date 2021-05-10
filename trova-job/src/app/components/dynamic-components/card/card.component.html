@@ -1,8 +1,10 @@
-<mat-card class="card">
+<mat-card class="card c-wrapper" (click)="onCardClick()">
     <mat-card-header>
-        <img mat-card-avatar class="card-header-image" src="https://material.angular.io/assets/img/examples/shiba1.jpg">
-        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-title> {{ cardTitle | titlecase }} </mat-card-title>
     </mat-card-header>
+    <div mat-card-image>
+        <fa-icon [icon]="searchIcon" size="10x" [classes]="['fontawesome-icon']" [styles]="{'color': '#303f9f'}">
+        </fa-icon>
+    </div>
 
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
 </mat-card>
