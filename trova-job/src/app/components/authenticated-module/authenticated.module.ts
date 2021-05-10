@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { CardComponent } from '../dynamic-components/card/card.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -38,6 +39,7 @@ const AngularMaterialModules = [
     HomeComponent,
     NavbarComponent,
     ProfileComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
