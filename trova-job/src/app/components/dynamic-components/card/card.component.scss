@@ -1,0 +1,13 @@
+.card {
+  max-width: 300px;
+  margin: 1rem;
+}
+
+.card-header-image {
+  background-size: cover;
+}
+
+mat-card {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
