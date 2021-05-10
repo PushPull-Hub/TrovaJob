@@ -9,11 +9,5 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) {}
-
-  gridColumns = 3;
-
-  toggleGridColumns() {
-    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
-  }
   ngOnInit(): void {}
 }

@@ -1,11 +1,6 @@
-mat-toolbar {
-  justify-content: space-between;
-}
-
-.content {
-  padding: 16px;
-}
-
-.content > mat-card {
-  margin-bottom: 16px;
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
