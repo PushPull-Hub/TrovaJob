@@ -4,34 +4,6 @@
   background: #dfe3ee;
 }
 
-.card-header-image {
-  background-size: cover;
-}
-
-mat-card {
-  display: inline-flex;
-  flex-wrap: wrap;
-}
-
-mat-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.mat-card-image {
-  margin: 5rem;
-}
-
-.mat-card > :last-child:not(.mat-card-footer) {
-  margin-bottom: 5rem;
-}
-
-.fontawesome-icon {
-  color: #303f9f;
-}
-
 .c-wrapper {
   border-radius: 15px;
   border: 1px solid #dddfe2;
@@ -41,4 +13,27 @@ mat-card-header {
 
 .c-wrapper:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+mat-card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  mat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mat-card-image {
+    margin: 5rem;
+  }
+
+  mat-card-actions {
+    width: 100%;
+
+    fa-icon {
+      float: right;
+    }
+  }
 }

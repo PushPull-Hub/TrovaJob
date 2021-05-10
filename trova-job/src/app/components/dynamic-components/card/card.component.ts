@@ -5,6 +5,7 @@ import {
   faIdCard,
   faBriefcase,
   faUserShield,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -14,21 +15,27 @@ import {
 })
 export class CardComponent implements OnInit {
   cardTitle: string;
-  searchIcon;
-  UsersSettingsIcon;
-  profileSettingsIcon;
-  jobsSettingsIcon;
-  adminIcon;
+  searchIcon: any;
+  UsersSettingsIcon: any;
+  profileSettingsIcon: any;
+  jobsSettingsIcon: any;
+  adminIcon: any;
+  favIcon: any;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.importIcons();
+    this.cardTitle = 'Look For New Offerts';
+  }
+
+  private importIcons() {
     this.searchIcon = faSearch;
     this.UsersSettingsIcon = faUsersCog;
     this.profileSettingsIcon = faIdCard;
     this.jobsSettingsIcon = faBriefcase;
     this.adminIcon = faUserShield;
-    this.cardTitle = 'Look For New Offerts';
+    this.favIcon = faHeart;
   }
 
   onCardClick() {

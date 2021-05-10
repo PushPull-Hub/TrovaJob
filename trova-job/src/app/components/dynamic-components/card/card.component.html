@@ -3,8 +3,12 @@
         <mat-card-title> {{ cardTitle | titlecase }} </mat-card-title>
     </mat-card-header>
     <div mat-card-image>
-        <fa-icon [icon]="searchIcon" size="10x" [classes]="['fontawesome-icon']" [styles]="{'color': '#303f9f'}">
+        <fa-icon [icon]="UsersSettingsIcon" size="10x" [classes]="['fontawesome-icon']" [styles]="{'color': '#303f9f'}">
         </fa-icon>
     </div>
+    <mat-card-actions>
+        <fa-icon [icon]="adminIcon" size="2x" [classes]="['admin-icon']" [styles]="{'color': '#dd1b16'}">
+        </fa-icon>
+    </mat-card-actions>
 
 </mat-card>
