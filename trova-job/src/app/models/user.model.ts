@@ -36,4 +36,4 @@ export class Birthday extends Object {
   // constructor(public day: number, public month: number, public year: number) {}
 }
 
-type Role = 'admin' | 'user';
+type Role = 'admin' | 'user' | 'company';

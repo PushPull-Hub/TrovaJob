@@ -2,7 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { faUserShield } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUserShield,
+  faBuilding,
+  faHome,
+  faSearch,
+  faPlus,
+  faUser,
+  faUsers,
+  faGlobeAfrica,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -11,16 +20,25 @@ import { faUserShield } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   getLoggedUserSubscription: Subscription;
-  loggedUserRole: 'user' | 'admin';
+  loggedUserRole: 'user' | 'admin' | 'company';
   isThereError: boolean;
-  adminUserIcon: any;
+
+  //icons
+  homeIcon: any;
+  searchIcon: any;
+  addIcon: any;
+  adminIcon: any;
+  userIcon: any;
+  companyIcon: any;
+  groupIcon: any;
+  notificationIcon: any;
 
   constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.isThereError = false;
     this.getLoggedUserSubscription = this.getLoggedUserRole();
-    this.adminUserIcon = faUserShield;
+    this.importIcons();
   }
 
   private getLoggedUserRole() {
@@ -31,6 +49,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.isThereError = true;
       }
     });
+  }
+
+  private importIcons() {
+    this.homeIcon = faHome;
+    this.searchIcon = faSearch;
+    this.addIcon = faPlus;
+    this.adminIcon = faUserShield;
+    this.companyIcon = faBuilding;
+    this.userIcon = faUser;
+    this.groupIcon = faUsers;
+    this.notificationIcon = faGlobeAfrica;
   }
 
   logOut() {
