@@ -49,6 +49,40 @@ export class TrovaJobHelperService {
     return of(user).toPromise();
   }
 
+  createUserAbilitiesObject(): Promise<any> {
+    return of({
+      canReadUsers: false,
+      canCreateUsers: false,
+      canUpdateUsers: false,
+      canDeleteteUsers: false,
+      canReadJobs: true,
+      canCreateJobs: false,
+      canUpdateJobs: false,
+      canDeleteJobs: false,
+      canCreateJob: false,
+      canUpdateJob: false,
+      canDeleteJob: false,
+      canUpdateProfile: true,
+    }).toPromise();
+  }
+
+  createCompanyAbilities() {
+    return of({
+      canReadUsers: false,
+      canCreateUsers: false,
+      canUpdateUsers: false,
+      canDeleteteUsers: false,
+      canReadJobs: true,
+      canCreateJobs: false,
+      canUpdateJobs: false,
+      canDeleteJobs: false,
+      canCreateJob: false,
+      canUpdateJob: false,
+      canDeleteJob: false,
+      canUpdateProfile: true,
+    }).toPromise();
+  }
+
   redirectTo(path: applicationPaths) {
     this.router.navigateByUrl(path);
   }
