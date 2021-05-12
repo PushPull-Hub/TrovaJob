@@ -44,6 +44,7 @@ export class AuthenticationService {
       })
       .catch((err) => {
         const error = new CustomErrorObject(err.message, err.code);
+        console.log(err);
         this.errorService.errorOnSignIn.next(error);
       });
   }
