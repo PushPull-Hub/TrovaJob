@@ -33,7 +33,7 @@
             </button>
         </div>
         <div class="spacer"></div>
-        <ng-container *ngIf="loggedUserRole == 'user'; else company">
+        <ng-container *ngIf="loggedUserRole === 'user'; else company">
             <button mat-mini-fab class="profile-button">
                 <fa-icon [icon]="userIcon"></fa-icon>
             </button>
