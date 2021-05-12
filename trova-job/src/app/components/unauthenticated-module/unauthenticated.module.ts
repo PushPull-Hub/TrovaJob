@@ -22,6 +22,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CloudSvg } from './wrapper/layers/cloud-svg.component';
 import { ToolBarComponent } from './wrapper/layers/toolbar.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -33,6 +35,8 @@ const AngularMaterialModules = [
   MatIconModule,
   MatNativeDateModule,
   MatProgressSpinnerModule,
+  MatCheckboxModule,
+  MatRadioModule,
 ];
 
 @NgModule({

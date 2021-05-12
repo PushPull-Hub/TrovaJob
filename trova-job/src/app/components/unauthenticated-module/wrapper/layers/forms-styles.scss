@@ -5,9 +5,20 @@
 mat-card-header {
   text-align: center;
   width: 100%;
-  display: block;
+  display: flex;
   font-weight: 700;
   color: #303f9f;
+
+  mat-card-title {
+    margin: 0;
+  }
+
+  mat-radio-group {
+    float: right;
+    .checkbox {
+      margin-left: 2rem;
+    }
+  }
 }
 
 .form {
@@ -15,24 +26,20 @@ mat-card-header {
   min-width: 100%;
   max-width: 300px;
   width: 100%;
-}
 
-.form {
   mat-form-field {
     padding: 0.7rem 0.2rem;
   }
+
+  .buttons-container {
+    float: right;
+    margin: 10px 0 0 0;
+    .has-account-button {
+      margin-right: 1rem;
+    }
+  }
+
   mat-hint {
     color: red;
-  }
-}
-
-.buttons-container {
-  float: right;
-  margin: 10px 0 0 0;
-}
-
-.buttons-container {
-  .has-account-button {
-    margin-right: 1rem;
   }
 }
