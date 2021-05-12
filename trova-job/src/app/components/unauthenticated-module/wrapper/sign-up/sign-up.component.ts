@@ -7,6 +7,7 @@ import { User } from 'src/app/models/user.model';
 import { Subscription } from 'rxjs';
 import { ErrorService } from 'src/app/services/error.service';
 import { TrovaJobHelperService } from 'src/app/services/helper.service';
+import { UserAbilities } from 'src/app/models/abilities.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -35,7 +36,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
   }
 
   private listenToErrors() {
-    return this.errorService.errorOnSignIn.subscribe((error) => {
+    return this.errorService.errorOnSignUp.subscribe((error) => {
       if (error) {
         this.isThereError = true;
         this.errorMessage = error.errorMessage;
@@ -53,12 +54,13 @@ export class SignUpComponent implements OnInit, OnDestroy {
     user.username = form.value.username;
     user.adress = form.value.adress;
     user.phoneNumber = form.value.phoneNumber;
-    user.role = 'user';
+    user.role = 'company';
     user.birthday = {
       day: 0,
       month: 0,
       year: 0,
     };
+    user.abilities = {};
     return user;
   }
 
