@@ -19,18 +19,14 @@ export class FireStoreCustomService {
   async createUserOnFireStore(user: User, firebaseUserId: any): Promise<User> {
     return new Promise(async (resolve, reject) => {
       try {
-        const userAbilities = await this.helperService.createUserAbilitiesObject();
-        const data = await this.helperService.createUserObjectFromUserCustomClass(
-          user,
-          firebaseUserId
-        );
+        const data =
+          await this.helperService.createUserObjectFromUserCustomClass(
+            user,
+            firebaseUserId
+          );
         this.angularFirestore
           .doc(`users/${firebaseUserId}`)
           .set(data, { merge: true });
-
-        this.angularFirestore
-          .doc(`abilities/${firebaseUserId}`)
-          .set(userAbilities, { merge: true });
         resolve(user);
       } catch (err) {
         const error = new CustomErrorObject(err.message, 400);
@@ -48,9 +44,10 @@ export class FireStoreCustomService {
             .valueChanges()
             .subscribe(async (data) => {
               try {
-                const user = await this.helperService.convertFirebaseObjectToUserObject(
-                  data
-                );
+                const user =
+                  await this.helperService.convertFirebaseObjectToUserObject(
+                    data
+                  );
                 resolve(user);
               } catch (error) {
                 const customError = new CustomErrorObject(error.message, 401);
