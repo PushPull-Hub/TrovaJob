@@ -1,9 +1,14 @@
 <mat-card-header>
     <mat-card-title>Register</mat-card-title>
+    <mat-radio-group [(ngModel)]="labelPosition">
+        <mat-radio-button class="checkbox" value="user">user</mat-radio-button>
+        <mat-radio-button class="checkbox" value="company">company</mat-radio-button>
+    </mat-radio-group>
 </mat-card-header>
+
+
 <div class="main-container">
     <form class="form" #f="ngForm" (ngSubmit)="signUp(f)">
-
         <mat-card-content>
             <mat-form-field class="w-100">
                 <input matInput placeholder="Username" class="form-control" name="username" ngModel required

@@ -18,6 +18,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
   isThereError: boolean;
   errorMessage: string;
   listeningToErrors: Subscription;
+  labelPosition: 'user' | 'company' = 'user';
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -54,7 +55,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
     user.username = form.value.username;
     user.adress = form.value.adress;
     user.phoneNumber = form.value.phoneNumber;
-    user.role = 'company';
+    user.role = this.labelPosition;
     user.birthday = {
       day: 0,
       month: 0,
