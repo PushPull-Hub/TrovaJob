@@ -1,3 +1,5 @@
+import { UserAbilities } from './abilities.model';
+
 export class User extends Object {
   id: string;
   email: string;
@@ -7,6 +9,7 @@ export class User extends Object {
   adress: string;
   birthday: Birthday;
   phoneNumber: number;
+  abilities: UserAbilities;
 
   public setUser(
     id: string,
