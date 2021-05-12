@@ -27,6 +27,9 @@ export class FireStoreCustomService {
         this.angularFirestore
           .doc(`users/${firebaseUserId}`)
           .set(data, { merge: true });
+        debugger;
+        console.log(data);
+
         resolve(user);
       } catch (err) {
         const error = new CustomErrorObject(err.message, 400);
@@ -48,6 +51,8 @@ export class FireStoreCustomService {
                   await this.helperService.convertFirebaseObjectToUserObject(
                     data
                   );
+                const abilities = await this.getUserAbilities(user.role);
+                user.abilities = abilities;
                 resolve(user);
               } catch (error) {
                 const customError = new CustomErrorObject(error.message, 401);
@@ -62,6 +67,27 @@ export class FireStoreCustomService {
           reject(error);
         }
       });
+    });
+  }
+
+  getUserAbilities(userRole: string) {
+    return new Promise<any>((resolve, reject) => {
+      this.angularFirestore
+        .doc(`abilities/${userRole}`)
+        .valueChanges()
+        .subscribe(async (data) => {
+          try {
+            const abilities =
+              await this.helperService.convertFirebaseObjectToAbilitiesObject(
+                data
+              );
+            resolve(abilities);
+          } catch (error) {
+            const customError = new CustomErrorObject(error.message, 401);
+            this.errorService.errorOnSignIn.next(customError);
+            reject(null);
+          }
+        });
     });
   }
 }
