@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import { UserAbilities } from '../models/abilities.model';
 
 import { User } from '../models/user.model';
 
@@ -29,6 +30,7 @@ export class TrovaJobHelperService {
       adress: user.adress,
       birthday: user.birthday,
       phoneNumber: user.phoneNumber,
+      abilities: {},
     }).toPromise();
   }
 
@@ -44,43 +46,32 @@ export class TrovaJobHelperService {
         (user.phoneNumber = firebaseObject.phoneNumber ?? null),
         (user.role = firebaseObject.role ?? null),
         (user.id = firebaseObject.id ?? null),
-        (user.username = firebaseObject.username ?? null))
+        (user.username = firebaseObject.username ?? null),
+        (user.abilities = firebaseObject.abilities ?? new UserAbilities()))
       : (user = null);
     return of(user).toPromise();
   }
 
-  createUserAbilitiesObject(): Promise<any> {
-    return of({
-      canReadUsers: false,
-      canCreateUsers: false,
-      canUpdateUsers: false,
-      canDeleteteUsers: false,
-      canReadJobs: true,
-      canCreateJobs: false,
-      canUpdateJobs: false,
-      canDeleteJobs: false,
-      canCreateJob: false,
-      canUpdateJob: false,
-      canDeleteJob: false,
-      canUpdateProfile: true,
-    }).toPromise();
-  }
-
-  createCompanyAbilities() {
-    return of({
-      canReadUsers: false,
-      canCreateUsers: false,
-      canUpdateUsers: false,
-      canDeleteteUsers: false,
-      canReadJobs: true,
-      canCreateJobs: false,
-      canUpdateJobs: false,
-      canDeleteJobs: false,
-      canCreateJob: false,
-      canUpdateJob: false,
-      canDeleteJob: false,
-      canUpdateProfile: true,
-    }).toPromise();
+  convertFirebaseObjectToAbilitiesObject(firebaseObject: {
+    [key: string]: any;
+  }): Promise<UserAbilities> {
+    let abilities = new UserAbilities();
+    firebaseObject
+      ? ((abilities.canReadUsers = firebaseObject.canReadUsers ?? false),
+        (abilities.canCreateUsers = firebaseObject.canCreateUsers ?? false),
+        (abilities.canUpdateUsers = firebaseObject.canUpdateUsers ?? false),
+        (abilities.canDeleteteUsers = firebaseObject.canDeleteteUsers ?? false),
+        (abilities.canReadJobs = firebaseObject.canReadJobs ?? false),
+        (abilities.canCreateJobs = firebaseObject.canCreateJobs ?? false),
+        (abilities.canUpdateJobs = firebaseObject.canUpdateJobs ?? false),
+        (abilities.canDeleteJobs = firebaseObject.canDeleteJobs ?? false),
+        (abilities.canReadJob = firebaseObject.canReadJob ?? false),
+        (abilities.canCreateJob = firebaseObject.canCreateJob ?? false),
+        (abilities.canUpdateJob = firebaseObject.canUpdateJob ?? false),
+        (abilities.canDeleteJob = firebaseObject.canDeleteJob ?? false),
+        (abilities.canUpdateProfile = firebaseObject.canUpdateProfile ?? false))
+      : (abilities = null);
+    return of(abilities).toPromise();
   }
 
   redirectTo(path: applicationPaths) {
