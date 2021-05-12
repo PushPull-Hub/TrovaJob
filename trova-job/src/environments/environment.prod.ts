@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyDlqksnthuCoWS-Sxz-2Y_jxgd978czlvQ',
-    authDomain: 'torinotrovajob-edc2a.firebaseapp.com',
-    projectId: 'torinotrovajob-edc2a',
-    storageBucket: 'torinotrovajob-edc2a.appspot.com',
-    messagingSenderId: '224988553367',
-    // appId: "1:224988553367:web:a6b62f9db6203f9a3589d2",
-    // measurementId: "G-GRZJ760PQ0"
+    apiKey: 'AIzaSyCZO_1uylWRmY37kK6cLZtguPqP-Nv6QGs',
+    authDomain: 'torino-trova-job.firebaseapp.com',
+    projectId: 'torino-trova-job',
+    storageBucket: 'torino-trova-job.appspot.com',
+    messagingSenderId: '181379143053',
+    appId: '1:181379143053:web:e04324ba58e8a96a6e99c4',
+    measurementId: 'G-0J3TDZLB8G',
   },
 };
