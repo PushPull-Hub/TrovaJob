@@ -27,9 +27,6 @@ export class FireStoreCustomService {
         this.angularFirestore
           .doc(`users/${firebaseUserId}`)
           .set(data, { merge: true });
-        debugger;
-        console.log(data);
-
         resolve(user);
       } catch (err) {
         const error = new CustomErrorObject(err.message, 400);
