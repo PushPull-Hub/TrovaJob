@@ -23,16 +23,13 @@ export class AuthenticationService {
     private errorService: ErrorService
   ) {}
 
-  // isAuthenticated() {
-  //   return localStorage.getItem('user') ? true : false;
-  // }
-
   signIn(email: string, password: string): void {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then(async (result) => {
         try {
-          const user = await this.angularFirestore.getLoggedInUserDataFromFireStore();
+          const user =
+            await this.angularFirestore.getLoggedInUserDataFromFireStore();
           const possibleError = new CustomErrorObject(
             FireBaseErrors.onFireStoreRetrieveUser,
             400
@@ -57,11 +54,11 @@ export class AuthenticationService {
       .then(async (fireAuthResponse) => {
         try {
           if (fireAuthResponse.user.uid) {
-            const savedUserOnFireStore: User = await this.angularFirestore.createUserOnFireStore(
-              user,
-              fireAuthResponse.user.uid
-            );
-            // this.helperFunctionsService.storeOnLocalStorage('user', user);
+            const savedUserOnFireStore: User =
+              await this.angularFirestore.createUserOnFireStore(
+                user,
+                fireAuthResponse.user.uid
+              );
             this.loggedInUser.next(savedUserOnFireStore);
             this.helperFunctionsService.redirectTo('home');
           }
@@ -96,7 +93,8 @@ export class AuthenticationService {
         } else {
           this.angularFireAuth.onAuthStateChanged(async (user) => {
             if (user && user.uid) {
-              const userData = await this.angularFirestore.getLoggedInUserDataFromFireStore();
+              const userData =
+                await this.angularFirestore.getLoggedInUserDataFromFireStore();
               this.loggedInUser.next(userData);
               resolve(true);
             } else {
