@@ -7,11 +7,12 @@ import { UserAbilities } from '../models/abilities.model';
 import { User } from '../models/user.model';
 
 type applicationPaths =
-  | 'home'
+  | 'app/home'
   | 'authentication/sign-in'
   | 'authentication/sign-up'
   | 'profile'
-  | 'authentication/welcome-page';
+  | 'authentication/welcome-page'
+  | 'access-denied';
 
 @Injectable({
   providedIn: 'root',
