@@ -6,7 +6,11 @@ export class Card {
 
   title: CardTitle;
   icon: CardIcon;
-  userType?: userType;
+  userType?: UserType;
+
+  setUserType(userType: UserType) {
+    this.userType = userType;
+  }
 }
 
 type CardTitle =
@@ -23,6 +27,7 @@ type CardIcon =
   | 'profileSettingsIcon'
   | 'jobsSettingsIcon'
   | 'adminIcon'
-  | 'favIcon';
+  | 'favIcon'
+  | 'addJobIcon';
 
-type userType = 'admin' | 'user' | 'company';
+type UserType = 'admin' | 'user' | 'company';
