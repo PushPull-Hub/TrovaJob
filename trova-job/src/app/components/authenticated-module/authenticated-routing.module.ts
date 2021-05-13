@@ -15,7 +15,7 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
-      { path: 'check-offerts', component: CheckOffertsComponent },
+      // { path: 'check-offerts', component: CheckOffertsComponent },
       {
         path: 'admin',
         canActivate: [AdminGuard],
@@ -33,6 +33,7 @@ const routes: Routes = [
       { path: 'access-denied', component: AccessDeniedComponent },
     ],
   },
+  { path: 'check-offerts', component: CheckOffertsComponent },
 ];
 
 @NgModule({

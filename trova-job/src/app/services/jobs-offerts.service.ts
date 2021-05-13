@@ -19,9 +19,7 @@ export class JobsOffertsService {
   getJobs(): Promise<Job[]> {
     return new Promise((resolve, reject) => {
       this.jobs.valueChanges().subscribe((data: Job[]) => {
-        data && data.length
-          ? resolve(data)
-          : reject('from JobsOffertsService line 21 : error on loading data. ');
+        data && data.length ? resolve(data) : resolve(null);
       });
     });
   }
