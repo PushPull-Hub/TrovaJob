@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TrovaJobHelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,13 +8,14 @@ import { Router } from '@angular/router';
     <img
       width="40"
       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+      (click)="redirectTo('authentication/welcome-page')"
     />
     <span> {{ 'Trova Job' | uppercase }}</span>
     <div class="spacer"></div>
     <button
       mat-stroked-button
       class="access-button"
-      (click)="routeToSignInPage()"
+      (click)="redirectTo('authentication/sign-in')"
     >
       Accedi
     </button>
@@ -69,11 +71,16 @@ import { Router } from '@angular/router';
   ],
 })
 export class ToolBarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private helperService: TrovaJobHelperService) {}
 
   ngOnInit(): void {}
 
-  routeToSignInPage() {
-    this.router.navigateByUrl('authentication/sign-in');
+  redirectTo(path: possiblePaths) {
+    this.helperService.redirectTo(path);
   }
 }
+
+type possiblePaths =
+  | 'authentication/sign-in'
+  | 'authentication/sign-up'
+  | 'authentication/welcome-page';
