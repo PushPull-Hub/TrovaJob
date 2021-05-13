@@ -1,8 +1,7 @@
 import {
-  Component,
   ComponentFactoryResolver,
+  Directive,
   Input,
-  ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
@@ -15,23 +14,26 @@ import {
   faUserShield,
   faHeart,
 } from '@fortawesome/free-solid-svg-icons';
+import { Card } from '../models/card.model';
 
-@Component({
-  selector: '[app-create-icon]',
-  template: '<ng-container #host [icon]="iconName"></ng-container>',
+@Directive({
+  selector: '[appCreatIcon]',
+  inputs: ['iconName:iconName '],
 })
 export class CreateIconDirective {
-  @ViewChild('host', { static: true, read: ViewContainerRef })
-  container: ViewContainerRef;
-  @Input() iconName: string;
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  public iconName: string;
+  constructor(
+    public viewContainerRef: ViewContainerRef,
+    private componentFactoryResolver: ComponentFactoryResolver
+  ) {}
 
-  createIcon() {
-    const factory = this.componentFactoryResolver.resolveComponentFactory(
-      FaIconComponent
-    );
-    const componentRef = this.container.createComponent(factory);
-    componentRef.instance.icon = importedIcons[this.iconName];
+  createIcons(card: Card) {
+    const factory =
+      this.componentFactoryResolver.resolveComponentFactory(FaIconComponent);
+    const host = this.viewContainerRef;
+    host.clear();
+    const componentRef = host.createComponent(factory);
+    componentRef.instance.icon = importedIcons[card.icon];
     componentRef.instance.size = '10x';
     componentRef.instance.classes = ['fontawesome-icon'];
     componentRef.instance.styles = { color: '#303f9f' };
