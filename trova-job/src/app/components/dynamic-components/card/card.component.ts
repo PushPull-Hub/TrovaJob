@@ -50,9 +50,8 @@ export class CardComponent implements OnInit, OnDestroy {
     if ((card.userType = 'admin')) {
       this.createAdminIcon();
     }
-    const factory = this.componentFactoryResolver.resolveComponentFactory(
-      FaIconComponent
-    );
+    const factory =
+      this.componentFactoryResolver.resolveComponentFactory(FaIconComponent);
     const componentRef = this.iconContainer.createComponent(factory);
     componentRef.instance.icon = importedIcons[card.icon];
     componentRef.instance.size = '10x';
@@ -62,9 +61,8 @@ export class CardComponent implements OnInit, OnDestroy {
   }
 
   createAdminIcon() {
-    const factory = this.componentFactoryResolver.resolveComponentFactory(
-      FaIconComponent
-    );
+    const factory =
+      this.componentFactoryResolver.resolveComponentFactory(FaIconComponent);
     const componentRef = this.adminIconContainer.createComponent(factory);
     componentRef.instance.icon = importedIcons['adminIcon'];
     componentRef.instance.size = '2x';
