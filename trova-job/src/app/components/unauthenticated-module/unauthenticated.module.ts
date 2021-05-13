@@ -50,10 +50,10 @@ const AngularMaterialModules = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     UnauthenticatedRoutingModule,
     ...AngularMaterialModules,
     ReactiveFormsModule,
-    FormsModule,
   ],
 })
 export class UnauthenticatedModule {}
