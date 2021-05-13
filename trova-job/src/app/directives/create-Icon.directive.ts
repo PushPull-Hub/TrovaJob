@@ -18,10 +18,9 @@ import { Card } from '../models/card.model';
 
 @Directive({
   selector: '[appCreatIcon]',
-  inputs: ['iconName:iconName '],
 })
 export class CreateIconDirective {
-  public iconName: string;
+  @Input('iconName') iconName: string;
   constructor(
     public viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
