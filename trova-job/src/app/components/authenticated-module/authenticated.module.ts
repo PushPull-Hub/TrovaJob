@@ -23,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CreateCardDirective } from 'src/app/directives/create-card.directive';
+import { CheckOffertsComponent } from './wrapper/check-offerts/check-offerts.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -44,6 +45,7 @@ const AngularMaterialModules = [
     ProfileComponent,
     CreateCardDirective,
     CardComponent,
+    CheckOffertsComponent,
   ],
   imports: [
     CommonModule,

@@ -13,14 +13,14 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'home',
+    path: '',
     canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./components/authenticated-module/authenticated.module').then(
         (m) => m.AuthenticatedModule
       ),
   },
-  { path: '', redirectTo: 'home/find-jobs', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
