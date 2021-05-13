@@ -1,0 +1,14 @@
+.card {
+  margin: 5rem 0;
+  padding: 1rem;
+  mat-card-actions {
+    float: right;
+    padding-top: 50px;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
