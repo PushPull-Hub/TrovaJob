@@ -1,1 +1,22 @@
+mat-card-content,
+mat-card-header,
+mat-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  mat-card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #303f9f;
+  }
+}
 
+mat-card-actions {
+  margin-top: 10px;
+}
+
+.header-image {
+  background-image: url("https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_505df21738edbe9baababa9d60be291d/github.png");
+  background-size: cover;
+}
