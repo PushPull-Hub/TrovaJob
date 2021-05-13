@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminGuard } from 'src/app/Guards/admin.guard';
 import { CompanyGuard } from 'src/app/Guards/company.guard';
+import { AccessDeniedComponent } from 'src/app/shared/access-denied/access-denied.component';
 import { CheckOffertsComponent } from './wrapper/check-offerts/check-offerts.component';
 import { HomeComponent } from './wrapper/home/home.component';
 import { ProfileComponent } from './wrapper/profile/profile.component';
@@ -9,10 +10,10 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'app',
     component: WrapperComponent,
     children: [
-      { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'check-offerts', component: CheckOffertsComponent },
       {
@@ -29,6 +30,7 @@ const routes: Routes = [
             (m) => m.ComapnyModule
           ),
       },
+      { path: 'access-denied', component: AccessDeniedComponent },
     ],
   },
 ];

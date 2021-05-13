@@ -29,7 +29,7 @@ export class UnauthenticatedGuard implements CanActivate {
       .isAuthenticated()
       .then((authenticated: boolean) => {
         if (authenticated) {
-          this.helperService.redirectTo('home');
+          this.helperService.redirectTo('app/home');
           return false;
         } else {
           return true;

@@ -36,7 +36,7 @@ export class AuthenticationService {
           );
           user
             ? (this.loggedInUser.next(user),
-              this.helperFunctionsService.redirectTo('home'))
+              this.helperFunctionsService.redirectTo('app/home'))
             : this.errorService.errorOnSignIn.next(possibleError);
         } catch (err) {
           this.errorService.errorOnSignIn.next(err);
@@ -61,7 +61,7 @@ export class AuthenticationService {
                 fireAuthResponse.user.uid
               );
             this.loggedInUser.next(savedUserOnFireStore);
-            this.helperFunctionsService.redirectTo('home');
+            this.helperFunctionsService.redirectTo('app/home');
           }
         } catch (error) {
           this.errorService.errorOnSignUp.next(error);

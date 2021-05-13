@@ -4,6 +4,7 @@ import { AuthenticatedGuard } from './Guards/authenticated.guard';
 import { UnauthenticatedGuard } from './Guards/unauthenticated.guard';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'app/home', pathMatch: 'full' },
   {
     path: 'authentication',
     canActivate: [UnauthenticatedGuard],
@@ -20,7 +21,6 @@ const routes: Routes = [
         (m) => m.AuthenticatedModule
       ),
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
