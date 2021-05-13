@@ -21,7 +21,7 @@ export class UserService {
         'manage job offerts',
         'jobsSettingsIcon'
       );
-      const addJobOffers = new Card('offer Jobs', 'jobsSettingsIcon');
+      const addJobOffers = new Card('offer Jobs', 'addJobIcon');
       const updateProfileCard = new Card(
         'update profile',
         'profileSettingsIcon'
@@ -29,26 +29,22 @@ export class UserService {
 
       let cards: Card[] = [];
       if (userAbilities) {
-        if (
-          userAbilities.canDeleteJob &&
-          userAbilities.canDeleteteUsers &&
-          userAbilities.canDeleteJob &&
-          userAbilities.canUpdateJobs
-        ) {
+        if (!userAbilities.canDeleteJobs && !userAbilities.canDeleteteUsers) {
+          if (userAbilities.canCreateJob && userAbilities.canDeleteJob) {
+            cards.push(addJobOffers, manageJobOfferts, updateProfileCard);
+          } else {
+            cards.push(searchJobCard, favJobsCard, updateProfileCard);
+          }
+        } else {
+          manageUsersCard.setUserType('admin');
+          manageJobOfferts.setUserType('admin');
           cards.push(
             manageUsersCard,
             manageJobOfferts,
             searchJobCard,
             addJobOffers,
-            manageJobOfferts
+            updateProfileCard
           );
-        } else if (
-          userAbilities.canCreateJob &&
-          userAbilities.canUpdateProfile
-        ) {
-          cards.push(addJobOffers, manageJobOfferts, updateProfileCard);
-        } else if (userAbilities.canReadJob && userAbilities.canUpdateProfile) {
-          cards.push(searchJobCard, favJobsCard, updateProfileCard);
         }
 
         resolve(cards);
@@ -62,34 +58,4 @@ export class UserService {
       }
     });
   }
-
-  // canCreate(user: User): boolean {
-  //   const allowed = ['admin', 'user'];
-  //   return this.checkAuthorization(user, allowed);
-  // }
-
-  // canRead(user: User): boolean {
-  //   const allowed = ['admin', 'user'];
-  //   return this.checkAuthorization(user, allowed);
-  // }
-
-  // canEdit(user: User): boolean {
-  //   const allowed = ['admin'];
-  //   return this.checkAuthorization(user, allowed);
-  // }
-
-  // canDelete(user: User): boolean {
-  //   const allowed = ['admin'];
-  //   return this.checkAuthorization(user, allowed);
-  // }
-
-  // private checkAuthorization(user: User, allowedRoles: string[]): boolean {
-  //   if (!user) return false;
-  //   for (const role of allowedRoles) {
-  //     if (user.role[role]) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
 }
