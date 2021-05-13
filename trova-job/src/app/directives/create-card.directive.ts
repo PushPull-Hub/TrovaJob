@@ -13,16 +13,15 @@ import { Card } from '../models/card.model';
   selector: '[appCreateCard]',
 })
 export class CreateCardDirective implements OnInit {
-  @Input() card: Card;
+  @Input('card') card: Card;
 
   constructor(
     public viewContainerRef: ViewContainerRef,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private injector: Injector
+    private componentFactoryResolver: ComponentFactoryResolver
   ) {}
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    this.createCardComponent();
   }
 
   createCardComponent() {
@@ -32,7 +31,5 @@ export class CreateCardDirective implements OnInit {
     host.clear();
     const componentRef = host.createComponent(factory);
     componentRef.instance.card = this.card;
-
-    // const service = this.injector.get(ComponentFactoryResolver);
   }
 }
