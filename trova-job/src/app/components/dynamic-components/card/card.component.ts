@@ -16,6 +16,7 @@ import {
   faSearch,
   faUsersCog,
   faUserShield,
+  faFolderPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { Card } from 'src/app/models/card.model';
 
@@ -26,6 +27,7 @@ const importedIcons: { [key: string]: IconProp } = {
   jobsSettingsIcon: faBriefcase,
   adminIcon: faUserShield,
   favIcon: faHeart,
+  addJobIcon: faFolderPlus,
 };
 @Component({
   selector: 'app-card',
@@ -47,7 +49,7 @@ export class CardComponent implements OnInit, OnDestroy {
   }
 
   createIcons(card: Card) {
-    if ((card.userType = 'admin')) {
+    if (card.userType === 'admin') {
       this.createAdminIcon();
     }
     const factory =

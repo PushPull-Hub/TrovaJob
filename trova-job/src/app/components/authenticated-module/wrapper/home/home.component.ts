@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
     this.cards = await this.userService.getControlCards(userabilities);
     setTimeout(() => {
       this.isCardsLoading = false;
-      console.log(this.cards);
     }, 700);
   }
 }
