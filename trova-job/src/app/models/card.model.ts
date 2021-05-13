@@ -1,4 +1,9 @@
 export class Card {
+  constructor(title: CardTitle, icon: CardIcon) {
+    this.title = title;
+    this.icon = icon;
+  }
+
   title: CardTitle;
   icon: CardIcon;
   userType?: userType;
