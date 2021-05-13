@@ -5,6 +5,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { HomeComponent } from './wrapper/home/home.component';
 import { NavbarComponent } from './wrapper/navbar/navbar.component';
 import { ProfileComponent } from './wrapper/profile/profile.component';
+import { CardComponent } from '../dynamic-components/card/card.component';
 
 import { SharedModule } from '../../shared/shared.module';
 import { AuthenticatedRoutingModule } from './authenticated-routing.module';
@@ -19,7 +20,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { CardComponent } from '../dynamic-components/card/card.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
