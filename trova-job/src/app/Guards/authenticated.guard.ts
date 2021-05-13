@@ -31,7 +31,7 @@ export class AuthenticatedGuard implements CanActivate {
         if (authenticated) {
           return true;
         } else {
-          this.helperService.redirectTo('authentication/sign-in');
+          this.helperService.redirectTo('authentication/welcome-page');
           return false;
         }
       });
