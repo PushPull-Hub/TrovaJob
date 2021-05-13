@@ -106,4 +106,21 @@ export class AuthenticationService {
       });
     });
   }
+
+  getloggedInUser(): Promise<User> {
+    return new Promise<User>(async (resolve, reject) => {
+      debugger;
+      this.loggedInUser.subscribe(async (user) => {
+        if (user && user.id) {
+          resolve(user);
+        } else {
+          const firestoreUser =
+            await this.angularFirestore.getLoggedInUserDataFromFireStore();
+          if (firestoreUser && firestoreUser.id) {
+            resolve(firestoreUser);
+          } else resolve(null);
+        }
+      });
+    });
+  }
 }
