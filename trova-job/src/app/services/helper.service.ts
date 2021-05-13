@@ -10,7 +10,8 @@ type applicationPaths =
   | 'home'
   | 'authentication/sign-in'
   | 'authentication/sign-up'
-  | 'profile';
+  | 'profile'
+  | 'authentication/welcome-page';
 
 @Injectable({
   providedIn: 'root',
