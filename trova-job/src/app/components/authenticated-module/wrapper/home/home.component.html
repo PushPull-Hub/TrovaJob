@@ -1,5 +1,13 @@
 <div class="card-wrapper">
-    <!-- <ng-container *ngFor="let item of [1,2,3,4,5]">
-        <app-card></app-card>
-    </ng-container> -->
+    <ng-container *ngIf="isCardsLoading; else cardsAreLoaded">
+        <div class="spinner-container">
+            <mat-spinner [diameter]="50"></mat-spinner>
+        </div>
+    </ng-container>
+    <ng-template #cardsAreLoaded>
+        <ng-container *ngFor="let card of cards">
+            <app-card [card]="card"></app-card>
+        </ng-container>
+    </ng-template>
+
 </div>
