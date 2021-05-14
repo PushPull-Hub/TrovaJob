@@ -23,7 +23,6 @@ p {
 
 .content {
   display: flex;
-  // margin: 82px auto 32px;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
@@ -44,6 +43,17 @@ p {
   padding: 40px 70px 80px;
 }
 
-mat-spinner {
-  margin: 0 auto;
+.c-spinner {
+  padding: 8rem;
+}
+
+.c-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #303f9f;
+  p {
+    margin: 0;
+  }
 }

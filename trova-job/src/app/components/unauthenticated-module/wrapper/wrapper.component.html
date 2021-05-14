@@ -5,8 +5,11 @@
     <div class="wrapper">
         <mat-card class="box">
             <ng-container *ngIf="loading; else forms">
-                <div class="spinner-container">
+                <div class="c-spinner">
                     <mat-spinner [diameter]="50"></mat-spinner>
+                </div>
+                <div class="c-message">
+                    <p>Loading form... </p>
                 </div>
             </ng-container>
             <ng-template #forms>
