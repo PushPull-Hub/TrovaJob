@@ -27,7 +27,7 @@ export class JobsOffertsService {
   getOfferts(): Promise<CompanyJobRequest[]> {
     return new Promise((resolve, reject) => {
       this.getJobs().then((data: Job[]) => {
-        if (data && data.length) {
+        if (data) {
           let offerts: CompanyJobRequest[] = [];
           data.map((job: Job) => {
             offerts.push(job.request);
