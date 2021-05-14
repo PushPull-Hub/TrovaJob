@@ -27,7 +27,7 @@ export class UserService {
         'profileSettingsIcon'
       );
 
-      let cards: Card[] = [];
+      const cards: Card[] = [];
       if (userAbilities) {
         if (!userAbilities.canDeleteJobs && !userAbilities.canDeleteteUsers) {
           if (userAbilities.canCreateJob && userAbilities.canDeleteJob) {
@@ -59,3 +59,10 @@ export class UserService {
     });
   }
 }
+
+// da aggiungere in db
+// const map = new Map([
+//   ['jobOffer', new Card('check job offerts', 'searchIcon')],
+//   ['cazzi', new Card('manage job offerts', 'searchIcon')],
+//   ['mazzi', new Card('manage job offerts', 'searchIcon')],
+// ]);
