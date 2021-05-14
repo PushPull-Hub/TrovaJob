@@ -32,17 +32,14 @@ export class AuthenticationService {
       const user =
         await this.angularFirestore.getLoggedInUserDataFromFireStore();
 
-      const possibleError = new CustomErrorObject(
-        FireBaseErrors.onFireStoreRetrieveUser,
-        400
-      );
       signIn && user
         ? (this.loggedInUser.next(user),
           this.helperFunctionsService.redirectTo('app/home'))
-        : this.errorService.errorOnSignIn.next(possibleError);
+        : null;
     } catch (err) {
       console.log(err);
       const error = new CustomErrorObject(err.message, err.code);
+      // this.errorService.errorOnSignIn.next(possibleError);
       this.errorService.errorOnSignIn.next(error);
     }
   }
@@ -73,7 +70,6 @@ export class AuthenticationService {
       .signOut()
       .then(() => {
         this.loggedInUser.next(null);
-        localStorage.removeItem('user');
         this.helperFunctionsService.redirectTo('authentication/sign-in');
       })
       .catch((err) => {
@@ -108,7 +104,6 @@ export class AuthenticationService {
 
   getloggedInUser(): Promise<User> {
     return new Promise<User>(async (resolve, reject) => {
-      debugger;
       this.loggedInUser.subscribe(async (user) => {
         if (user && user.id) {
           resolve(user);
