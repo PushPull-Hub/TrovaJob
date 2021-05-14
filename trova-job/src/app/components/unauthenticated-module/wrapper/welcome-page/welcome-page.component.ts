@@ -9,15 +9,20 @@ import { TrovaJobHelperService } from 'src/app/services/helper.service';
 export class WelcomePageComponent implements OnInit {
   cardTitle: string;
   welcomeMessage: string;
+  isLoading: boolean;
 
   constructor(private helperService: TrovaJobHelperService) {}
 
   ngOnInit(): void {
+    this.isLoading = false;
     this.cardTitle = 'Torino Trova Job';
     this.welcomeMessage = "finding your job, it's our job";
   }
 
   accessApplication() {
-    this.helperService.redirectTo('authentication/sign-in');
+    this.isLoading = true;
+    setTimeout(() => {
+      this.helperService.redirectTo('authentication/sign-in');
+    }, 900);
   }
 }

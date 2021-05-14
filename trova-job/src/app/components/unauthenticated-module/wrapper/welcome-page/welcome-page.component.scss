@@ -16,7 +16,20 @@ mat-card-actions {
   margin-top: 10px;
 }
 
-.header-image {
-  background-image: url("https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_505df21738edbe9baababa9d60be291d/github.png");
-  background-size: cover;
+.c-spinner {
+  padding: 8rem;
+  .mat-spinner::ng-deep circle {
+    stroke: #c62828;
+  }
+}
+
+.c-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #303f9f;
+  p {
+    margin: 0;
+  }
 }
