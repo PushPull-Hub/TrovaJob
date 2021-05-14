@@ -23,50 +23,49 @@ export class AuthenticationService {
     private errorService: ErrorService
   ) {}
 
-  signIn(email: string, password: string): void {
-    this.angularFireAuth
-      .signInWithEmailAndPassword(email, password)
-      .then(async (result) => {
-        try {
-          const user =
-            await this.angularFirestore.getLoggedInUserDataFromFireStore();
-          const possibleError = new CustomErrorObject(
-            FireBaseErrors.onFireStoreRetrieveUser,
-            400
-          );
-          user
-            ? (this.loggedInUser.next(user),
-              this.helperFunctionsService.redirectTo('app/home'))
-            : this.errorService.errorOnSignIn.next(possibleError);
-        } catch (err) {
-          this.errorService.errorOnSignIn.next(err);
-        }
-      })
-      .catch((err) => {
-        const error = new CustomErrorObject(err.message, err.code);
-        console.log(err);
-        this.errorService.errorOnSignIn.next(error);
-      });
+  async signIn(email: string, password: string): Promise<void> {
+    try {
+      const signIn = await this.angularFireAuth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+      const user =
+        await this.angularFirestore.getLoggedInUserDataFromFireStore();
+
+      const possibleError = new CustomErrorObject(
+        FireBaseErrors.onFireStoreRetrieveUser,
+        400
+      );
+      signIn && user
+        ? (this.loggedInUser.next(user),
+          this.helperFunctionsService.redirectTo('app/home'))
+        : this.errorService.errorOnSignIn.next(possibleError);
+    } catch (err) {
+      console.log(err);
+      const error = new CustomErrorObject(err.message, err.code);
+      this.errorService.errorOnSignIn.next(error);
+    }
   }
 
-  signUp(user: User): void {
-    this.angularFireAuth
-      .createUserWithEmailAndPassword(user.email, user.password)
-      .then(async (fireAuthResponse) => {
-        try {
-          if (fireAuthResponse.user.uid) {
-            const savedUserOnFireStore: User =
-              await this.angularFirestore.createUserOnFireStore(
-                user,
-                fireAuthResponse.user.uid
-              );
-            this.loggedInUser.next(savedUserOnFireStore);
-            this.helperFunctionsService.redirectTo('app/home');
-          }
-        } catch (error) {
-          this.errorService.errorOnSignUp.next(error);
-        }
-      });
+  async signUp(user: User): Promise<void> {
+    try {
+      const fireAuthResponse =
+        await this.angularFireAuth.createUserWithEmailAndPassword(
+          user.email,
+          user.password
+        );
+
+      const savedUserOnFireStore: User =
+        await this.angularFirestore.createUserOnFireStore(
+          user,
+          fireAuthResponse.user.uid
+        );
+
+      this.loggedInUser.next(savedUserOnFireStore);
+      this.helperFunctionsService.redirectTo('app/home');
+    } catch (error) {
+      this.errorService.errorOnSignUp.next(error);
+    }
   }
 
   logOut() {
