@@ -30,7 +30,7 @@ export class AdminGuard implements CanActivate {
       if (user && user.role === 'admin') {
         return true;
       } else {
-        this.helperService.redirectTo('access-denied');
+        this.helperService.redirectTo('app/access-denied');
         return false;
       }
     });

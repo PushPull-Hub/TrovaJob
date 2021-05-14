@@ -34,7 +34,7 @@ export class CompanyGuard implements CanActivate {
       ) {
         return true;
       } else {
-        this.helperService.redirectTo('access-denied');
+        this.helperService.redirectTo('app/access-denied');
         return false;
       }
     });

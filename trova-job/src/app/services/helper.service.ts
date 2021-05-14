@@ -12,7 +12,7 @@ type applicationPaths =
   | 'authentication/sign-up'
   | 'profile'
   | 'authentication/welcome-page'
-  | 'access-denied';
+  | 'app/access-denied';
 
 @Injectable({
   providedIn: 'root',
