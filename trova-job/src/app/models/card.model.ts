@@ -7,6 +7,7 @@ export class Card {
   title: CardTitle;
   icon: CardIcon;
   userType?: UserType;
+  onClickNavigateTo: string;
 
   setUserType(userType: UserType) {
     this.userType = userType;
