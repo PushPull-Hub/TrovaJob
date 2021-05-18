@@ -1,5 +1,3 @@
-import { UserAbilities } from './abilities.model';
-
 export class User extends Object {
   id: string;
   email: string;
@@ -9,7 +7,6 @@ export class User extends Object {
   adress: string;
   birthday: Birthday;
   phoneNumber: number;
-  abilities: UserAbilities;
 
   public setUser(
     id: string,
@@ -39,4 +36,4 @@ export class Birthday extends Object {
   // constructor(public day: number, public month: number, public year: number) {}
 }
 
-type Role = 'admin' | 'user' | 'company';
+export type Role = 'admin' | 'user' | 'company';
