@@ -168,49 +168,182 @@
       "phoneNumber": 2145246
     }
   ],
-  "abilities": {
+  "configurations": {
     "admin": {
-      "canReadUsers": true,
-      "canCreateUsers": true,
-      "canUpdateUsers": true,
-      "canDeleteteUsers": true,
-      "canReadJobs": true,
-      "canCreateJobs": true,
-      "canUpdateJobs": true,
-      "canDeleteJobs": true,
-      "canReadJob": true,
-      "canCreateJob": true,
-      "canUpdateJob": true,
-      "canDeleteJob": true,
-      "canUpdateProfile": true
+      "abilities": {
+        "canReadUsers": true,
+        "canCreateUsers": true,
+        "canUpdateUsers": true,
+        "canDeleteteUsers": true,
+        "canReadJobs": true,
+        "canCreateJobs": true,
+        "canUpdateJobs": true,
+        "canDeleteJobs": true,
+        "canReadJob": true,
+        "canCreateJob": true,
+        "canUpdateJob": true,
+        "canDeleteJob": true,
+        "canUpdateProfile": true
+      },
+      "cards": [
+        {
+          "title": "manage users",
+          "icon": "UsersSettingsIcon",
+          "userType": "admin",
+          "onClickNavigateTo": "app/admin/manage-users"
+        },
+        {
+          "title": "manage job offerts",
+          "icon": "jobsSettingsIcon",
+          "userType": "admin",
+          "onClickNavigateTo": "app/admin/manage-jobs"
+        },
+        {
+          "title": "check job offerts",
+          "icon": "searchIcon",
+          "userType": "admin",
+          "onClickNavigateTo": "check-offerts"
+        },
+        {
+          "title": "offer Jobs",
+          "icon": "addJobIcon",
+          "userType": "admin",
+          "onClickNavigateTo": "app/company/offer-job"
+        },
+        {
+          "title": "update profile",
+          "icon": "profileSettingsIcon",
+          "userType": "admin",
+          "onClickNavigateTo": "app/profile"
+        }
+      ],
+      "navLinks": {
+        "buttons": [
+          {
+            "title": "home",
+            "iconName": "homeIcon",
+            "onClickNavigateTo": "app/home"
+          },
+          {
+            "title": "manage users",
+            "iconName": "groupIcon",
+            "onClickNavigateTo": "app/admin/manage-users"
+          },
+          {
+            "title": "notification",
+            "iconName": "notificationIcon",
+            "onClickNavigateTo": "app/notifications"
+          }
+        ],
+        "userButton": {
+          "type": "admin",
+          "icon": "adminIcon",
+          "onClickNavigateTo": "app/profile"
+        }
+      }
     },
     "user": {
-      "canReadUsers": false,
-      "canCreateUsers": false,
-      "canUpdateUsers": false,
-      "canDeleteteUsers": false,
-      "canReadJobs": true,
-      "canCreateJobs": false,
-      "canUpdateJobs": false,
-      "canDeleteJobs": false,
-      "canCreateJob": false,
-      "canUpdateJob": false,
-      "canDeleteJob": false,
-      "canUpdateProfile": true
+      "abilities": {
+        "canReadJobs": true,
+        "canUpdateProfile": true
+      },
+      "cards": [
+        {
+          "title": "check job offerts",
+          "icon": "searchIcon",
+          "userType": "user",
+          "onClickNavigateTo": "check-offerts"
+        },
+        {
+          "title": "favorite",
+          "icon": "favIcon",
+          "userType": "user",
+          "onClickNavigateTo": "app/user/favorite"
+        },
+        {
+          "title": "update profile",
+          "icon": "profileSettingsIcon",
+          "userType": "user",
+          "onClickNavigateTo": "app/profile"
+        }
+      ],
+      "navLinks": {
+        "buttons": [
+          {
+            "title": "home",
+            "iconName": "homeIcon",
+            "onClickNavigateTo": "app/home"
+          },
+          {
+            "title": "check job offerts",
+            "iconName": "searchIcon",
+            "onClickNavigateTo": "check-offerts"
+          },
+          {
+            "title": "add",
+            "iconName": "addIcon",
+            "onClickNavigateTo": "app/admin/manage-jobs"
+          }
+        ],
+        "userButton": {
+          "type": "user",
+          "icon": "userIcon",
+          "onClickNavigateTo": "app/profile"
+        }
+      }
     },
     "company": {
-      "canReadUsers": false,
-      "canCreateUsers": false,
-      "canUpdateUsers": false,
-      "canDeleteteUsers": false,
-      "canReadJobs": true,
-      "canCreateJobs": false,
-      "canUpdateJobs": false,
-      "canDeleteJobs": false,
-      "canCreateJob": true,
-      "canUpdateJob": true,
-      "canDeleteJob": true,
-      "canUpdateProfile": true
+      "abilities": {
+        "canReadJobs": true,
+        "canCreateJob": true,
+        "canUpdateJob": true,
+        "canDeleteJob": true,
+        "canUpdateProfile": true
+      },
+      "cards": [
+        {
+          "title": "offer Jobs",
+          "icon": "addJobIcon",
+          "userType": "company",
+          "onClickNavigateTo": "app/admin/manage-jobs"
+        },
+        {
+          "title": "manage job offerts",
+          "icon": "jobsSettingsIcon",
+          "userType": "user",
+          "onClickNavigateTo": "app/admin/manage-jobs"
+        },
+        {
+          "title": "update profile",
+          "icon": "profileSettingsIcon",
+          "userType": "user",
+          "onClickNavigateTo": "app/profile"
+        }
+      ],
+      "navLinks": {
+        "buttons": [
+          {
+            "title": "home",
+            "iconName": "homeIcon",
+            "onClickNavigateTo": "app/home"
+          },
+          {
+            "title": "check job offerts",
+            "iconName": "searchIcon",
+            "onClickNavigateTo": "check-offerts"
+          },
+          {
+            "title": "add",
+            "iconName": "addIcon",
+            "onClickNavigateTo": "app/admin/manage-jobs"
+          }
+        ],
+        "userButton": {
+          "type": "company",
+          "icon": "companyIcon",
+          "onClickNavigateTo": "app/profile"
+        }
+      }
     }
   }
 }
