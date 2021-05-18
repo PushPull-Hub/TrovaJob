@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserAbilities } from 'src/app/models/abilities.model';
 import { Card } from 'src/app/models/card.model';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -21,13 +20,13 @@ export class HomeComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.authenticationService.loggedInUser.subscribe((user) => {
-      if (user) this.loadCards(user.abilities);
+      if (user) this.loadCards(user.role);
     });
   }
 
-  private async loadCards(userabilities: UserAbilities) {
+  private async loadCards(userRole) {
     this.isCardsLoading = true;
-    this.cards = await this.userService.getControlCards(userabilities);
+    this.cards = await this.userService.getSignleConfig(userRole, 'cards');
     setTimeout(() => {
       this.isCardsLoading = false;
     }, 700);
