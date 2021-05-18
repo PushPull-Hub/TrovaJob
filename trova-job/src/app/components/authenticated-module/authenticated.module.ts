@@ -21,8 +21,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CreateCardDirective } from 'src/app/directives/create-card.directive';
+import { CreateIconDirective } from 'src/app/directives/create-Icon.directive';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CheckOffertsComponent } from './wrapper/check-offerts/check-offerts.component';
 
 const AngularMaterialModules = [
@@ -46,6 +48,7 @@ const AngularMaterialModules = [
     CreateCardDirective,
     CardComponent,
     CheckOffertsComponent,
+    CreateIconDirective,
   ],
   imports: [
     CommonModule,
