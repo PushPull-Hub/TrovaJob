@@ -1,68 +1,50 @@
 import { Injectable } from '@angular/core';
-import { UserAbilities } from '../models/abilities.model';
-import { Card } from '../models/card.model';
-import { CustomErrorObject } from '../models/error.model';
+import { BehaviorSubject } from 'rxjs';
 
-import { User } from '../models/user.model';
-import { CardsErrors, ErrorService } from './error.service';
+import { FireStoreCustomService } from './fire-store.service';
+import { ErrorService, FireBaseErrors } from './error.service';
 
+import { Role } from '../models/user.model';
+import { Configuration } from '../models/configuration.model';
+
+type SingleConfig = 'abilities' | 'cards' | 'navLinks';
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private errorService: ErrorService) {}
+  configurations: BehaviorSubject<Configuration> =
+    new BehaviorSubject<Configuration>(null);
 
-  getControlCards(userAbilities: UserAbilities): Promise<Card[]> {
-    return new Promise<Card[]>((resolve, reject) => {
-      const searchJobCard = new Card('check job offerts', 'searchIcon');
-      const favJobsCard = new Card('favorite', 'favIcon');
-      const manageUsersCard = new Card('manage users', 'UsersSettingsIcon');
-      const manageJobOfferts = new Card(
-        'manage job offerts',
-        'jobsSettingsIcon'
-      );
-      const addJobOffers = new Card('offer Jobs', 'addJobIcon');
-      const updateProfileCard = new Card(
-        'update profile',
-        'profileSettingsIcon'
-      );
+  constructor(
+    private fireStoreCustomService: FireStoreCustomService,
+    private errorService: ErrorService
+  ) {}
 
-      const cards: Card[] = [];
-      if (userAbilities) {
-        if (!userAbilities.canDeleteJobs && !userAbilities.canDeleteteUsers) {
-          if (userAbilities.canCreateJob && userAbilities.canDeleteJob) {
-            cards.push(addJobOffers, manageJobOfferts, updateProfileCard);
-          } else {
-            cards.push(searchJobCard, favJobsCard, updateProfileCard);
-          }
-        } else {
-          manageUsersCard.setUserType('admin');
-          manageJobOfferts.setUserType('admin');
-          cards.push(
-            manageUsersCard,
-            manageJobOfferts,
-            searchJobCard,
-            addJobOffers,
-            updateProfileCard
-          );
+  getConfigurations(userRole: Role): Promise<Configuration> {
+    return new Promise<Configuration>((resolve, reject) => {
+      this.fireStoreCustomService
+        .getConfigurations(userRole)
+        .subscribe((data: Configuration) => {
+          data
+            ? (this.configurations.next(data), resolve(data))
+            : reject(FireBaseErrors.onFireStoreRetrieveUser);
+        });
+    });
+  }
+
+  getSignleConfig(userRole: Role, config: SingleConfig): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.configurations.subscribe(async (data) => {
+        if (data) {
+          resolve(data[config]);
         }
-
-        resolve(cards);
-      } else {
-        const error = new CustomErrorObject(
-          CardsErrors.onCreatingMainIconFail,
-          401
-        );
-        this.errorService.errorOnLoadingCard.next(error);
-        reject(error);
-      }
+        try {
+          const configs = await this.getConfigurations(userRole);
+          resolve(configs[config]);
+        } catch (error) {
+          console.log(error);
+        }
+      });
     });
   }
 }
-
-// da aggiungere in db
-// const map = new Map([
-//   ['jobOffer', new Card('check job offerts', 'searchIcon')],
-//   ['cazzi', new Card('manage job offerts', 'searchIcon')],
-//   ['mazzi', new Card('manage job offerts', 'searchIcon')],
-// ]);
