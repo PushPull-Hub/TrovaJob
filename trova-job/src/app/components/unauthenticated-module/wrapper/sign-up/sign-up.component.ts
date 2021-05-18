@@ -7,7 +7,6 @@ import { User } from 'src/app/models/user.model';
 import { Subscription } from 'rxjs';
 import { ErrorService } from 'src/app/services/error.service';
 import { TrovaJobHelperService } from 'src/app/services/helper.service';
-import { UserAbilities } from 'src/app/models/abilities.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -61,7 +60,6 @@ export class SignUpComponent implements OnInit, OnDestroy {
       month: 0,
       year: 0,
     };
-    user.abilities = {};
     return user;
   }
 
