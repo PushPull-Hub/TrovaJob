@@ -37,9 +37,7 @@ export class AuthenticationService {
           this.helperFunctionsService.redirectTo('app/home'))
         : null;
     } catch (err) {
-      console.log(err);
       const error = new CustomErrorObject(err.message, err.code);
-      // this.errorService.errorOnSignIn.next(possibleError);
       this.errorService.errorOnSignIn.next(error);
     }
   }

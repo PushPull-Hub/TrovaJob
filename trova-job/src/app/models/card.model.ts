@@ -1,3 +1,5 @@
+import { applicationPaths } from '../services/helper.service';
+
 export class Card {
   constructor(title: CardTitle, icon: CardIcon) {
     this.title = title;
@@ -7,11 +9,7 @@ export class Card {
   title: CardTitle;
   icon: CardIcon;
   userType?: UserType;
-  onClickNavigateTo: string;
-
-  setUserType(userType: UserType) {
-    this.userType = userType;
-  }
+  onClickNavigateTo: applicationPaths;
 }
 
 type CardTitle =
