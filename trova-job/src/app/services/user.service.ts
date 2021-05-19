@@ -12,21 +12,22 @@ type SingleConfig = 'abilities' | 'cards' | 'navLinks';
   providedIn: 'root',
 })
 export class UserService {
-  configurations: BehaviorSubject<Configuration> =
+  private configurationsSource: BehaviorSubject<Configuration> =
     new BehaviorSubject<Configuration>(null);
+  configurations = this.configurationsSource.asObservable();
 
   constructor(
     private fireStoreCustomService: FireStoreCustomService,
     private errorService: ErrorService
   ) {}
 
-  getConfigurations(userRole: Role): Promise<Configuration> {
+  private _getConfigurations(userRole: Role): Promise<Configuration> {
     return new Promise<Configuration>((resolve, reject) => {
       this.fireStoreCustomService
         .getConfigurations(userRole)
         .subscribe((data: Configuration) => {
           data
-            ? (this.configurations.next(data), resolve(data))
+            ? (this.configurationsSource.next(data), resolve(data))
             : reject(FireBaseErrors.onFireStoreRetrieveUser);
         });
     });
@@ -39,7 +40,7 @@ export class UserService {
           resolve(data[config]);
         }
         try {
-          const configs = await this.getConfigurations(userRole);
+          const configs = await this._getConfigurations(userRole);
           resolve(configs[config]);
         } catch (error) {
           console.log(error);
