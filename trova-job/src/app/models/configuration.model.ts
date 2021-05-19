@@ -4,10 +4,12 @@ import { Card } from './card.model';
 export class Configuration extends Object {
   abilities: UserAbilities;
   cards: Card[];
-  navLinks: {
-    buttons: NavbarButton[];
-    userButton: UserButton;
-  };
+  navLinks: NavbarConfiguration;
+}
+
+export class NavbarConfiguration extends Object {
+  buttons: NavbarButton[];
+  userButton: UserButton;
 }
 
 class NavbarButton extends Object {
