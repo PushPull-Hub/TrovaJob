@@ -1,4 +1,4 @@
-<mat-card class="card c-wrapper" (click)="onCardClick()">
+<mat-card class="card c-wrapper" (click)="onCardClick(card.onClickNavigateTo)">
     <mat-card-header>
         <mat-card-title> {{ card.title | titlecase }} </mat-card-title>
     </mat-card-header>

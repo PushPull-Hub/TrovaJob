@@ -19,6 +19,10 @@ import {
   faFolderPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { Card } from 'src/app/models/card.model';
+import {
+  applicationPaths,
+  TrovaJobHelperService,
+} from 'src/app/services/helper.service';
 
 const importedIcons: { [key: string]: IconProp } = {
   searchIcon: faSearch,
@@ -42,7 +46,10 @@ export class CardComponent implements OnInit, OnDestroy {
   adminIconContainer: ViewContainerRef;
   isLoading: boolean;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private helperService: TrovaJobHelperService
+  ) {}
 
   ngOnInit(): void {
     this.fakeLoader();
@@ -81,8 +88,8 @@ export class CardComponent implements OnInit, OnDestroy {
     }, 900);
   }
 
-  onCardClick() {
-    console.log('card clicked');
+  onCardClick(path: applicationPaths) {
+    this.helperService.redirectTo(path);
   }
 
   ngOnDestroy(): void {}
