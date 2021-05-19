@@ -5,7 +5,7 @@ import { Configuration } from '../models/configuration.model';
 
 import { User } from '../models/user.model';
 
-type applicationPaths =
+export type applicationPaths =
   | 'authentication/welcome-page'
   | 'authentication/sign-in'
   | 'authentication/sign-up'
