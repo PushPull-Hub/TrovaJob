@@ -1,4 +1,4 @@
-import { applicationPaths } from '../services/helper.service';
+import { ApplicationPossiblePaths } from './app-paths.model';
 
 export class Card {
   constructor(title: CardTitle, icon: CardIcon) {
@@ -9,7 +9,7 @@ export class Card {
   title: CardTitle;
   icon: CardIcon;
   userType?: UserType;
-  onClickNavigateTo: applicationPaths;
+  onClickNavigateTo: ApplicationPossiblePaths;
 }
 
 type CardTitle =

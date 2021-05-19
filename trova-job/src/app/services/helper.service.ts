@@ -1,22 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { ApplicationPossiblePaths } from '../models/app-paths.model';
 import { Configuration } from '../models/configuration.model';
 
 import { User } from '../models/user.model';
-
-export type applicationPaths =
-  | 'authentication/welcome-page'
-  | 'authentication/sign-in'
-  | 'authentication/sign-up'
-  | 'app/home'
-  | 'app/profile'
-  | 'check-offerts'
-  | 'app/admin/manage-users'
-  | 'app/admin/manage-jobs'
-  | 'app/company/offer-job'
-  | 'app/access-denied';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -67,7 +55,7 @@ export class TrovaJobHelperService {
     return configurations;
   }
 
-  redirectTo(path: applicationPaths) {
+  redirectTo(path: ApplicationPossiblePaths) {
     this.router.navigateByUrl(path);
   }
 }

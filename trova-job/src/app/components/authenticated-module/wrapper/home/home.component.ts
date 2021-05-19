@@ -3,7 +3,6 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { Card } from 'src/app/models/card.model';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { applicationPaths } from 'src/app/services/helper.service';
 import { UserService } from 'src/app/services/user.service';
 type UserType = 'admin' | 'user' | 'company';
 
@@ -33,6 +32,6 @@ export class HomeComponent implements OnInit {
     this.cards = await this.userService.getSignleConfig(userRole, 'cards');
     setTimeout(() => {
       this.isCardsLoading = false;
-    }, 700);
+    }, 200);
   }
 }

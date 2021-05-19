@@ -18,11 +18,9 @@ import {
   faUserShield,
   faFolderPlus,
 } from '@fortawesome/free-solid-svg-icons';
+import { ApplicationPossiblePaths } from 'src/app/models/app-paths.model';
 import { Card } from 'src/app/models/card.model';
-import {
-  applicationPaths,
-  TrovaJobHelperService,
-} from 'src/app/services/helper.service';
+import { TrovaJobHelperService } from 'src/app/services/helper.service';
 
 const importedIcons: { [key: string]: IconProp } = {
   searchIcon: faSearch,
@@ -88,7 +86,7 @@ export class CardComponent implements OnInit, OnDestroy {
     }, 900);
   }
 
-  onCardClick(path: applicationPaths) {
+  onCardClick(path: ApplicationPossiblePaths) {
     this.helperService.redirectTo(path);
   }
 
