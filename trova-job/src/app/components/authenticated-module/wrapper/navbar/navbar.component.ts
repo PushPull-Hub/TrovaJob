@@ -12,6 +12,10 @@ import {
   faUsers,
   faGlobeAfrica,
 } from '@fortawesome/free-solid-svg-icons';
+import { NavbarConfiguration } from 'src/app/models/configuration.model';
+import { UserService } from 'src/app/services/user.service';
+import { TrovaJobHelperService } from 'src/app/services/helper.service';
+import { ApplicationPossiblePaths } from 'src/app/models/app-paths.model';
 
 @Component({
   selector: 'app-navbar',
@@ -19,47 +23,60 @@ import {
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  getLoggedUserSubscription: Subscription;
-  loggedUserRole: 'user' | 'admin' | 'company';
-  isThereError: boolean;
+  getLoggedUserAndNavbarConfigsSubscription: Subscription;
+
+  navbarConfigurations: NavbarConfiguration;
+  isThereLoggedUser: boolean;
+  isLoading: boolean;
 
   //icons
-  homeIcon: any;
-  searchIcon: any;
-  addIcon: any;
-  adminIcon: any;
-  userIcon: any;
-  companyIcon: any;
-  groupIcon: any;
-  notificationIcon: any;
+  importedicons = {
+    homeIcon: faHome,
+    searchIcon: faSearch,
+    addIcon: faPlus,
+    adminIcon: faUserShield,
+    companyIcon: faBuilding,
+    userIcon: faUser,
+    groupIcon: faUsers,
+    notificationIcon: faGlobeAfrica,
+  };
 
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(
+    private authenticationService: AuthenticationService,
+    private userService: UserService,
+    private helperService: TrovaJobHelperService
+  ) {}
 
   ngOnInit(): void {
-    this.isThereError = false;
-    this.getLoggedUserSubscription = this.getLoggedUserRole();
-    this.importIcons();
+    this.getLoggedUserAndNavbarConfigsSubscription =
+      this.getLoggeduserThenconfigurations();
   }
 
-  private getLoggedUserRole() {
-    return this.authenticationService.loggedInUser.subscribe((value: User) => {
-      if (value && value.id) {
-        this.loggedUserRole = value.role;
-      } else {
-        this.isThereError = true;
+  private getLoggeduserThenconfigurations() {
+    this.isLoading = true;
+    this.isThereLoggedUser = false;
+    return this.authenticationService.loggedInUser.subscribe(
+      async (user: User) => {
+        if (user && user.id) {
+          this.navbarConfigurations = await this.userService.getSignleConfig(
+            user.role,
+            'navLinks'
+          );
+          this.isThereLoggedUser = true;
+          setTimeout(() => {
+            this.isLoading = false;
+          }, 100);
+          console.log(this.navbarConfigurations);
+        } else {
+          this.isLoading = false;
+          this.isThereLoggedUser = false;
+        }
       }
-    });
+    );
   }
 
-  private importIcons() {
-    this.homeIcon = faHome;
-    this.searchIcon = faSearch;
-    this.addIcon = faPlus;
-    this.adminIcon = faUserShield;
-    this.companyIcon = faBuilding;
-    this.userIcon = faUser;
-    this.groupIcon = faUsers;
-    this.notificationIcon = faGlobeAfrica;
+  navigate(path: ApplicationPossiblePaths) {
+    this.helperService.redirectTo(path);
   }
 
   logOut() {
@@ -67,6 +84,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.getLoggedUserSubscription.unsubscribe();
+    this.getLoggedUserAndNavbarConfigsSubscription.unsubscribe();
   }
 }
