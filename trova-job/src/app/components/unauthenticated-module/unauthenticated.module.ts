@@ -24,6 +24,7 @@ import { CloudSvg } from './wrapper/layers/cloud-svg.component';
 import { ToolBarComponent } from './wrapper/layers/toolbar.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -51,6 +52,7 @@ const AngularMaterialModules = [
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     UnauthenticatedRoutingModule,
     ...AngularMaterialModules,
     ReactiveFormsModule,
