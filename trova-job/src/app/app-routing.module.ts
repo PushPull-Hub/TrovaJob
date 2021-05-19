@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CheckOffertsComponent } from './shared/check-offerts/check-offerts.component';
 import { AuthenticatedGuard } from './Guards/authenticated.guard';
 import { UnauthenticatedGuard } from './Guards/unauthenticated.guard';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
         (m) => m.AuthenticatedModule
       ),
   },
+  { path: 'check-offerts', component: CheckOffertsComponent },
 ];
 
 @NgModule({
