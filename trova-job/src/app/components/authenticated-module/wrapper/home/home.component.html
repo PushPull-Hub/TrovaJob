@@ -6,7 +6,7 @@
     </ng-container>
     <ng-template #cardsAreLoaded>
         <ng-container *ngFor="let card of cards">
-            <ng-template appCreateCard [card]="card" (cardClicked)="parrentEventHandlerFunction($event)"></ng-template>
+            <ng-template appCreateCard [card]="card"></ng-template>
         </ng-container>
     </ng-template>
 
