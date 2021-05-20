@@ -4,7 +4,7 @@ import { Card } from './card.model';
 export class Configuration extends Object {
   abilities: UserAbilities;
   cards: Card[];
-  navLinks: NavbarConfiguration;
+  navLinks: NavbarConfiguration | 'defaultConfiguration';
 }
 
 export class NavbarConfiguration extends Object {
