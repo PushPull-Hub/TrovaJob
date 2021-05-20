@@ -22,6 +22,13 @@ const routes: Routes = [
         (m) => m.AuthenticatedModule
       ),
   },
+  {
+    path: 'job-offerts',
+    loadChildren: () =>
+      import('./components/job-offerts-module/job-offerts.module').then(
+        (m) => m.JobOffertsModule
+      ),
+  },
   { path: 'check-offerts', component: CheckOffertsComponent },
 ];
 
