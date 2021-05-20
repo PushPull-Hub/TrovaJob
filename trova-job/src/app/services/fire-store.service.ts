@@ -59,7 +59,7 @@ export class FireStoreCustomService {
             FireBaseErrors.onFireAuthSignIn,
             400
           );
-          reject(error);
+          resolve(null);
         }
       });
     });
