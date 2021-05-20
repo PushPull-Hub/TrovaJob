@@ -13,7 +13,9 @@ import { User } from 'src/app/models/user.model';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  loggedInUser: BehaviorSubject<User> = new BehaviorSubject<User>(null);
+  private loggedInUserSubject: BehaviorSubject<User> =
+    new BehaviorSubject<User>(null);
+  loggedInUser = this.loggedInUserSubject.asObservable();
   isFormLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor(
@@ -33,7 +35,7 @@ export class AuthenticationService {
         await this.angularFirestore.getLoggedInUserDataFromFireStore();
 
       signIn && user
-        ? (this.loggedInUser.next(user),
+        ? (this.loggedInUserSubject.next(user),
           this.helperFunctionsService.redirectTo('app/home'))
         : null;
     } catch (err) {
@@ -56,7 +58,7 @@ export class AuthenticationService {
           fireAuthResponse.user.uid
         );
 
-      this.loggedInUser.next(savedUserOnFireStore);
+      this.loggedInUserSubject.next(savedUserOnFireStore);
       this.helperFunctionsService.redirectTo('app/home');
     } catch (error) {
       this.errorService.errorOnSignUp.next(error);
@@ -67,7 +69,7 @@ export class AuthenticationService {
     this.angularFireAuth
       .signOut()
       .then(() => {
-        this.loggedInUser.next(null);
+        this.loggedInUserSubject.next(null);
         this.helperFunctionsService.redirectTo('authentication/sign-in');
       })
       .catch((err) => {
@@ -89,7 +91,7 @@ export class AuthenticationService {
             if (user && user.uid) {
               const userData =
                 await this.angularFirestore.getLoggedInUserDataFromFireStore();
-              this.loggedInUser.next(userData);
+              this.loggedInUserSubject.next(userData);
               resolve(true);
             } else {
               resolve(false);

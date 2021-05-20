@@ -21,7 +21,7 @@ export class UserService {
     private errorService: ErrorService
   ) {}
 
-  private _getConfigurations(userRole: Role): Promise<Configuration> {
+  getConfigurations(userRole: Role): Promise<Configuration> {
     return new Promise<Configuration>((resolve, reject) => {
       this.fireStoreCustomService
         .getConfigurations(userRole)
@@ -40,7 +40,7 @@ export class UserService {
           resolve(data[config]);
         }
         try {
-          const configs = await this._getConfigurations(userRole);
+          const configs = await this.getConfigurations(userRole);
           resolve(configs[config]);
         } catch (error) {
           console.log(error);
