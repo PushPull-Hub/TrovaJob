@@ -19,6 +19,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CheckOffertsComponent } from './check-offerts/check-offerts.component';
 import { NavComponent } from './nav/nav.component';
+import { DefaultNavComponent } from './nav/default-nav/default-nav.component';
+import { LoggedUserNavComponent } from './nav/logged-user-nav/logged-user-nav.component';
+import { ItsLoadingNavComponent } from './nav/its-loading-nav/its-loading-nav.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -38,6 +41,9 @@ const AngularMaterialModules = [
     AccessDeniedComponent,
     CheckOffertsComponent,
     NavComponent,
+    DefaultNavComponent,
+    LoggedUserNavComponent,
+    ItsLoadingNavComponent,
   ],
   imports: [CommonModule, ...AngularMaterialModules, FontAwesomeModule],
   exports: [
