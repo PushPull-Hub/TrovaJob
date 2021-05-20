@@ -16,7 +16,12 @@ export class AuthenticationService {
   private loggedInUserSubject: BehaviorSubject<User> =
     new BehaviorSubject<User>(null);
   loggedInUser = this.loggedInUserSubject.asObservable();
+
   isFormLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+
+  componentRequiredLogOut: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(null);
+  loggingOut = this.componentRequiredLogOut.asObservable();
 
   constructor(
     private angularFireAuth: AngularFireAuth,
@@ -108,11 +113,15 @@ export class AuthenticationService {
         if (user && user.id) {
           resolve(user);
         } else {
-          const firestoreUser =
-            await this.angularFirestore.getLoggedInUserDataFromFireStore();
-          if (firestoreUser && firestoreUser.id) {
-            resolve(firestoreUser);
-          } else resolve(null);
+          try {
+            const firestoreUser =
+              await this.angularFirestore.getLoggedInUserDataFromFireStore();
+            firestoreUser && firestoreUser.id
+              ? resolve(firestoreUser)
+              : resolve(null);
+          } catch (error) {
+            resolve(null);
+          }
         }
       });
     });
