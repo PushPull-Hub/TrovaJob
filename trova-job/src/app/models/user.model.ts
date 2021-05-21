@@ -7,26 +7,6 @@ export class User extends Object {
   adress: string;
   birthday: Birthday;
   phoneNumber: number;
-
-  public setUser(
-    id: string,
-    email: string,
-    password: string,
-    username: string,
-    role: Role,
-    adress: string,
-    birthday: Birthday,
-    phoneNumber: number
-  ) {
-    this.id = id;
-    this.email = email;
-    this.password = password;
-    this.username = username;
-    this.role = role;
-    this.adress = adress;
-    this.birthday = birthday;
-    this.phoneNumber = phoneNumber;
-  }
 }
 
 export class Birthday extends Object {
