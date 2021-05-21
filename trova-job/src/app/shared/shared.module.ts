@@ -17,7 +17,6 @@ import { MatCardModule } from '@angular/material/card';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CheckOffertsComponent } from './check-offerts/check-offerts.component';
 import { NavComponent } from './nav/nav.component';
 import { DefaultNavComponent } from './nav/default-nav/default-nav.component';
 import { LoggedUserNavComponent } from './nav/logged-user-nav/logged-user-nav.component';
@@ -40,7 +39,6 @@ const AngularMaterialModules = [
   declarations: [
     CloudSvgComponent,
     AccessDeniedComponent,
-    CheckOffertsComponent,
     NavComponent,
     DefaultNavComponent,
     LoggedUserNavComponent,
@@ -51,7 +49,6 @@ const AngularMaterialModules = [
   exports: [
     CloudSvgComponent,
     AccessDeniedComponent,
-    CheckOffertsComponent,
     NavComponent,
     ...AngularMaterialModules,
     CreateCardDirective,
