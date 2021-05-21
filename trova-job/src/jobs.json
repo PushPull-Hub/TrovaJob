@@ -1,141 +1,228 @@
 {
-  "jobs": [
-    {
-      "id": 1,
-      "companyName": "SCAI Consulting",
-      "city": "Torino",
-      "field": "consulenza informatica aziendale",
-      "shareCapital": "10.000.000 $",
-      "phoneNumber": 123456789,
-      "request": {
-        "field": "Web Development",
-        "postRequested": ".Net Junior Web Developer",
-        "salryRange": "1100$ - 1300$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 2,
-      "companyName": "SCAI Tech",
-      "city": "Torino",
-      "field": "consulenza informatica aziendale",
-      "shareCapital": "20.000.000 $",
-      "phoneNumber": 987654321,
-      "request": {
-        "field": "Web Development",
-        "postRequested": "Java Senior Web Developer",
-        "salryRange": "1700$ - 2100$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 3,
-      "companyName": "Reale Mutua",
-      "city": "Torino",
-      "field": "Finance",
-      "shareCapital": "10.000.000.000 $",
-      "phoneNumber": 123456789,
-      "request": {
-        "field": "Human Resources",
-        "postRequested": "secretary",
-        "salryRange": "1100$ - 1300$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 4,
-      "companyName": "Accenture",
-      "city": "Milano",
-      "field": "consulenza informatica aziendale",
-      "shareCapital": "10.000.000.000 $",
-      "phoneNumber": 653197362,
-      "request": {
-        "field": "Management",
-        "postRequested": "team manager",
-        "salryRange": "1700$ - 1900$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 5,
-      "companyName": ".NET",
-      "city": "Venice",
-      "field": "informatica",
-      "shareCapital": "7.000.000$",
-      "phoneNumber": 5465465132,
-      "request": {
-        "field": "Web Development",
-        "postRequested": ".Net Junior Web Developer",
-        "salryRange": "1100$ - 1300$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 6,
-      "companyName": "Intesa San Paola",
-      "city": "Novara",
-      "field": "Banca",
-      "shareCapital": "1.000.000.000.000 $",
-      "phoneNumber": 324565846,
-      "request": {
-        "field": "Web Development",
-        "postRequested": "Accountant",
-        "salryRange": "1500$ - 1600$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 7,
-      "companyName": "Cocco Pazzo",
-      "city": "Torino",
-      "field": "Cuccina",
-      "shareCapital": "70.000 $",
-      "phoneNumber": 325463541,
-      "request": {
-        "field": "Cucina",
-        "postRequested": "Second Chef ",
-        "salryRange": "1100$ - 1300$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 8,
-      "companyName": "SCAI Finance",
-      "city": "Warsaw",
-      "field": "consulenza informatica aziendale",
-      "shareCapital": "100.000 $",
-      "phoneNumber": 2423541365,
-      "request": {
-        "field": "Web Development",
-        "postRequested": "Angular / Java Web Developer",
-        "salryRange": "1100$ - 1300$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
-      }
-    },
-    {
-      "id": 9,
-      "companyName": "SCAI spa",
-      "city": "Torino",
-      "field": "consulenza informatica aziendale",
-      "shareCapital": "10.000.000 $",
-      "phoneNumber": 123456789,
-      "request": {
-        "field": "Web Development",
-        "postRequested": "Node.js senior Web Developer",
-        "salryRange": "1900$ - 2500$",
-        "cvLoaderWebsite": "www.google.com",
-        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+  "jobs": {
+    "cities": ["Turin", "Milan", "Venice"],
+    "city": {
+      "Turin": {
+        "id": 1,
+        "city": "Turin",
+        "imgUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/92/Torino_Mole_Piemonte_Italy_Landscape_Travel.jpg/800px-Torino_Mole_Piemonte_Italy_Landscape_Travel.jpg",
+        "jobOffertsAmount": 9,
+        "jobOfferts": [
+          {
+            "id": 1,
+            "companyName": "SCAI Consulting",
+            "city": "Turin",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "10.000.000 $",
+            "phoneNumber": 123456789,
+            "request": {
+              "field": "Web Development",
+              "postRequested": ".Net Junior Web Developer",
+              "salryRange": "1100$ - 1300$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 2,
+            "companyName": "SCAI Tech",
+            "city": "Turin",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "20.000.000 $",
+            "phoneNumber": 987654321,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Java Senior Web Developer",
+              "salryRange": "1700$ - 2100$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 3,
+            "companyName": "Reale Mutua",
+            "city": "Turin",
+            "field": "Finance",
+            "shareCapital": "10.000.000.000 $",
+            "phoneNumber": 123456789,
+            "request": {
+              "field": "Human Resources",
+              "postRequested": "secretary",
+              "salryRange": "1100$ - 1300$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 4,
+            "companyName": "Accenture",
+            "city": "Turin",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "10.000.000.000 $",
+            "phoneNumber": 653197362,
+            "request": {
+              "field": "Management",
+              "postRequested": "team manager",
+              "salryRange": "1700$ - 1900$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 6,
+            "companyName": "Intesa San Paola",
+            "city": "Turin",
+            "field": "Banca",
+            "shareCapital": "1.000.000.000.000 $",
+            "phoneNumber": 324565846,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Accountant",
+              "salryRange": "1500$ - 1600$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 7,
+            "companyName": "Cocco Pazzo",
+            "city": "Turin",
+            "field": "Cuccina",
+            "shareCapital": "70.000 $",
+            "phoneNumber": 325463541,
+            "request": {
+              "field": "Cucina",
+              "postRequested": "Second Chef ",
+              "salryRange": "1100$ - 1300$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 8,
+            "companyName": "SCAI Finance",
+            "city": "Turin",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "100.000 $",
+            "phoneNumber": 2423541365,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Angular / Java Web Developer",
+              "salryRange": "1100$ - 1300$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 9,
+            "companyName": "SCAI spa",
+            "city": "Turin",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "10.000.000 $",
+            "phoneNumber": 123456789,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Node.js senior Web Developer",
+              "salryRange": "1900$ - 2500$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          }
+        ]
+      },
+      "Milan": {
+        "id": 2,
+        "city": "Milan",
+        "imgUrl": "https://d2bgjx2gb489de.cloudfront.net/gbb-blogs/wp-content/uploads/2018/07/18174234/Milan-Cathedral-870x400.jpg",
+        "jobOffertsAmount": 3,
+        "jobOfferts": [
+          {
+            "id": 3,
+            "companyName": "Reale Mutua",
+            "city": "Milamn",
+            "field": "Finance",
+            "shareCapital": "10.000.000.000 $",
+            "phoneNumber": 123456789,
+            "request": {
+              "field": "Human Resources",
+              "postRequested": "secretary",
+              "salryRange": "1100$ - 1300$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 9,
+            "companyName": "SCAI spa",
+            "city": "Milamn",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "10.000.000 $",
+            "phoneNumber": 123456789,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Node.js senior Web Developer",
+              "salryRange": "1900$ - 2500$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 6,
+            "companyName": "Intesa San Paola",
+            "city": "Turin",
+            "field": "Banca",
+            "shareCapital": "1.000.000.000.000 $",
+            "phoneNumber": 324565846,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Accountant",
+              "salryRange": "1500$ - 1600$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          }
+        ]
+      },
+      "Venice": {
+        "id": 3,
+        "city": "Venice",
+        "imgUrl": "https://www.fodors.com/wp-content/uploads/2019/11/HERO_Venice__FloatingCityBuilt_iStock-986940360.jpg",
+        "jobOffertsAmount": 2,
+        "jobOfferts": [
+          {
+            "id": 5,
+            "companyName": ".NET",
+            "city": "Venice",
+            "field": "informatica",
+            "shareCapital": "7.000.000$",
+            "phoneNumber": 5465465132,
+            "request": {
+              "field": "Web Development",
+              "postRequested": ".Net Junior Web Developer",
+              "salryRange": "1100$ - 1300$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          },
+          {
+            "id": 9,
+            "companyName": "SCAI spa",
+            "city": "Venice",
+            "field": "consulenza informatica aziendale",
+            "shareCapital": "10.000.000 $",
+            "phoneNumber": 123456789,
+            "request": {
+              "field": "Web Development",
+              "postRequested": "Node.js senior Web Developer",
+              "salryRange": "1900$ - 2500$",
+              "cvLoaderWebsite": "www.google.com",
+              "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliqua nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,tenetur error, harum nesciunt ipsum debitis quas aliquid"
+            }
+          }
+        ]
       }
     }
-  ],
+  },
   "users": [
     {
       "id": "1",
@@ -185,38 +272,49 @@
         "canDeleteJob": true,
         "canUpdateProfile": true
       },
-      "cards": [
-        {
-          "title": "manage users",
-          "icon": "UsersSettingsIcon",
-          "userType": "admin",
-          "onClickNavigateTo": "app/admin/manage-users"
-        },
-        {
-          "title": "manage job offerts",
-          "icon": "jobsSettingsIcon",
-          "userType": "admin",
-          "onClickNavigateTo": "app/admin/manage-jobs"
-        },
-        {
-          "title": "check job offerts",
-          "icon": "searchIcon",
-          "userType": "admin",
-          "onClickNavigateTo": "check-offerts"
-        },
-        {
-          "title": "offer Jobs",
-          "icon": "addJobIcon",
-          "userType": "admin",
-          "onClickNavigateTo": "app/company/offer-job"
-        },
-        {
-          "title": "update profile",
-          "icon": "profileSettingsIcon",
-          "userType": "admin",
-          "onClickNavigateTo": "app/profile"
-        }
-      ],
+      "cards": {
+        "home": [
+          {
+            "title": "manage users",
+            "icon": "UsersSettingsIcon",
+            "userType": "admin",
+            "onClickNavigateTo": "app/admin/manage-users"
+          },
+          {
+            "title": "manage job offerts",
+            "icon": "jobsSettingsIcon",
+            "userType": "admin",
+            "onClickNavigateTo": "app/admin/manage-jobs"
+          },
+          {
+            "title": "check job offerts",
+            "icon": "searchIcon",
+            "userType": "admin",
+            "onClickNavigateTo": "check-offerts"
+          },
+          {
+            "title": "offer Jobs",
+            "icon": "addJobIcon",
+            "userType": "admin",
+            "onClickNavigateTo": "app/company/offer-job"
+          },
+          {
+            "title": "update profile",
+            "icon": "profileSettingsIcon",
+            "userType": "admin",
+            "onClickNavigateTo": "app/profile"
+          }
+        ],
+        "manageJobs": [
+          {
+            "title": "add place",
+            "icon": "addJobIcon",
+            "userType": "admin",
+            "onClickNavigateTo": "app/admin/manage-jobs/add-new-place"
+          }
+        ],
+        "manageUsers": []
+      },
       "navLinks": {
         "buttons": [
           {
@@ -247,26 +345,30 @@
         "canReadJobs": true,
         "canUpdateProfile": true
       },
-      "cards": [
-        {
-          "title": "check job offerts",
-          "icon": "searchIcon",
-          "userType": "user",
-          "onClickNavigateTo": "check-offerts"
-        },
-        {
-          "title": "favorite",
-          "icon": "favIcon",
-          "userType": "user",
-          "onClickNavigateTo": "app/user/favorite"
-        },
-        {
-          "title": "update profile",
-          "icon": "profileSettingsIcon",
-          "userType": "user",
-          "onClickNavigateTo": "app/profile"
-        }
-      ],
+      "cards": {
+        "home": [
+          {
+            "title": "check job offerts",
+            "icon": "searchIcon",
+            "userType": "user",
+            "onClickNavigateTo": "check-offerts"
+          },
+          {
+            "title": "favorite",
+            "icon": "favIcon",
+            "userType": "user",
+            "onClickNavigateTo": "app/user/favorite"
+          },
+          {
+            "title": "update profile",
+            "icon": "profileSettingsIcon",
+            "userType": "user",
+            "onClickNavigateTo": "app/profile"
+          }
+        ],
+        "manageJobs": null,
+        "manageUsers": null
+      },
       "navLinks": {
         "buttons": [
           {
@@ -300,26 +402,30 @@
         "canDeleteJob": true,
         "canUpdateProfile": true
       },
-      "cards": [
-        {
-          "title": "offer Jobs",
-          "icon": "addJobIcon",
-          "userType": "company",
-          "onClickNavigateTo": "app/admin/manage-jobs"
-        },
-        {
-          "title": "manage job offerts",
-          "icon": "jobsSettingsIcon",
-          "userType": "user",
-          "onClickNavigateTo": "app/admin/manage-jobs"
-        },
-        {
-          "title": "update profile",
-          "icon": "profileSettingsIcon",
-          "userType": "user",
-          "onClickNavigateTo": "app/profile"
-        }
-      ],
+      "cards": {
+        "home": [
+          {
+            "title": "offer Jobs",
+            "icon": "addJobIcon",
+            "userType": "company",
+            "onClickNavigateTo": "app/admin/manage-jobs"
+          },
+          {
+            "title": "manage job offerts",
+            "icon": "jobsSettingsIcon",
+            "userType": "user",
+            "onClickNavigateTo": "app/admin/manage-jobs"
+          },
+          {
+            "title": "update profile",
+            "icon": "profileSettingsIcon",
+            "userType": "user",
+            "onClickNavigateTo": "app/profile"
+          }
+        ],
+        "manageJobs": [],
+        "manageUsers": null
+      },
       "navLinks": {
         "buttons": [
           {
