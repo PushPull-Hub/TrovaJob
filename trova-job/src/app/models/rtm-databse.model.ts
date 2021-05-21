@@ -1,16 +1,19 @@
-import { Job } from 'src/app/models/job.model';
+import { JobOffert } from 'src/app/models/job.model';
 
 export class RealTimeDataBaseJobs extends Object {
-  cities: cityname[];
-  city: CityCard;
+  cities: City[];
+  jobs: Jobs;
 }
 
-export class CityCard extends Object {
+export class City extends Object {
   id: number;
-  city: cityname;
+  city: string;
   imgUrl: string;
   jobOffertsAmount: number;
-  jobOfferts?: Job[];
 }
 
-type cityname = string;
+export type Jobs = {
+  [cityName: string]: {
+    offerts: JobOffert[];
+  };
+};

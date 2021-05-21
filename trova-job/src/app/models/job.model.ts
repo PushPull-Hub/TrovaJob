@@ -1,4 +1,4 @@
-export class Job {
+export class JobOffert {
   id: number;
   companyName: string;
   city: string;
