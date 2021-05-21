@@ -22,7 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { CreateCardDirective } from 'src/app/directives/create-card.directive';
 import { CreateIconDirective } from 'src/app/directives/create-Icon.directive';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -46,7 +45,6 @@ const AngularMaterialModules = [
     HomeComponent,
     NavbarComponent,
     ProfileComponent,
-    CreateCardDirective,
     CardComponent,
     CreateIconDirective,
   ],
