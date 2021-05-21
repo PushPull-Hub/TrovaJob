@@ -18,7 +18,8 @@ type CardTitle =
   | 'check job offerts'
   | 'favorite'
   | 'offer Jobs'
-  | 'update profile';
+  | 'update profile'
+  | 'add place';
 
 type CardIcon =
   | 'searchIcon'
