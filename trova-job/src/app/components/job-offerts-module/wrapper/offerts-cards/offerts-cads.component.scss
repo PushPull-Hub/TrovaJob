@@ -1,0 +1,9 @@
+.main {
+  display: inline-flex;
+  flex-flow: row wrap;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  mat-card {
+    margin: 1rem;
+  }
+}
