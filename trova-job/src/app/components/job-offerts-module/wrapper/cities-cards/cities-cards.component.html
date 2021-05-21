@@ -1,6 +1,6 @@
 <div class="main">
     <div class="card-wrapper" *ngFor="let card of citiesCards">
-        <mat-card class="card c-wrapper">
+        <mat-card class="card c-wrapper" (click)="takeMeToOffertsOf(card.city)">
             <mat-card-header>
                 <mat-card-title> {{ card.city | titlecase }}</mat-card-title>
             </mat-card-header>
