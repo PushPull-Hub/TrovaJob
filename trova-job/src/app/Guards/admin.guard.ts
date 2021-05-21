@@ -26,7 +26,6 @@ export class AdminGuard implements CanActivate {
     | boolean
     | UrlTree {
     return this.authenticationService.getloggedInUser().then((user) => {
-      console.log('in');
       if (user && user.role === 'admin') {
         return true;
       } else {

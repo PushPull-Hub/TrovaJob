@@ -66,7 +66,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
           setTimeout(() => {
             this.isLoading = false;
           }, 100);
-          console.log(this.navbarConfigurations);
         } else {
           this.isLoading = false;
           this.isThereLoggedUser = false;

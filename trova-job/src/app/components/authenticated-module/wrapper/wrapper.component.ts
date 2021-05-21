@@ -29,7 +29,7 @@ export class WrapperComponent implements OnInit, OnDestroy {
 
   private IfChildComponentRequiredLogOut() {
     return this.authenticationService.loggingOut.subscribe((value: boolean) => {
-      if (value) this.authenticationService.logOut;
+      if (value) this.authenticationService.logOut();
     });
   }
 
@@ -37,10 +37,12 @@ export class WrapperComponent implements OnInit, OnDestroy {
     return this.authenticationService.loggedInUser.subscribe(
       async (user: User) => {
         try {
-          this.loggedInuser = user;
-          this.configurations = await this.userService.getConfigurations(
-            user.role
-          );
+          if (user) {
+            this.loggedInuser = user;
+            this.configurations = await this.userService.getConfigurations(
+              user.role
+            );
+          }
         } catch (error) {
           console.log(error);
         }
