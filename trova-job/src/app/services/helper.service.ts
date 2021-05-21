@@ -49,8 +49,12 @@ export class TrovaJobHelperService {
     let configurations = new Configuration();
     firebaseObject
       ? ((configurations.abilities = firebaseObject.abilities),
-        (configurations.cards = [...firebaseObject.cards]),
-        (configurations.navLinks = firebaseObject.navLinks))
+        (configurations.navLinks = firebaseObject.navLinks),
+        (configurations.cards = {
+          home: [...firebaseObject.cards.home],
+          manageJobs: [...firebaseObject.cards.manageJobs],
+          manageUsers: [...firebaseObject.cards.manageUsers],
+        }))
       : (configurations = null);
     return configurations;
   }

@@ -5,7 +5,7 @@
         </div>
     </ng-container>
     <ng-template #cardsAreLoaded>
-        <ng-container *ngFor="let card of cards">
+        <ng-container *ngFor="let card of cards['home']">
             <ng-template appCreateCard [card]="card"></ng-template>
         </ng-container>
     </ng-template>

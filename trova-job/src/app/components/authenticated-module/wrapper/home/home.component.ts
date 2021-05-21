@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
-import { Card } from 'src/app/models/card.model';
+import { Subscription } from 'rxjs';
+import { AppCards } from 'src/app/models/configuration.model';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserService } from 'src/app/services/user.service';
@@ -12,7 +12,7 @@ type UserType = 'admin' | 'user' | 'company';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  cards: Card[];
+  cards: AppCards[];
   isCardsLoading: boolean;
   SubscribeToLoggedUser: Subscription;
 
