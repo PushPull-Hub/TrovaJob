@@ -8,4 +8,5 @@ export type ApplicationPossiblePaths =
   | 'app/admin/manage-users'
   | 'app/admin/manage-jobs'
   | 'app/company/offer-job'
-  | 'app/access-denied';
+  | 'app/access-denied'
+  | 'job-offerts';
