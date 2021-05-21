@@ -20,9 +20,9 @@
         "jobOffertsAmount": 2
       }
     ],
-    "city": {
+    "jobs": {
       "Turin": {
-        "jobOfferts": [
+        "offerts": [
           {
             "id": 1,
             "companyName": "SCAI Consulting",
@@ -146,11 +146,11 @@
         ]
       },
       "Milan": {
-        "jobOfferts": [
+        "offerts": [
           {
             "id": 3,
             "companyName": "Reale Mutua",
-            "city": "Milamn",
+            "city": "Milan",
             "field": "Finance",
             "shareCapital": "10.000.000.000 $",
             "phoneNumber": 123456789,
@@ -165,7 +165,7 @@
           {
             "id": 9,
             "companyName": "SCAI spa",
-            "city": "Milamn",
+            "city": "Milan",
             "field": "consulenza informatica aziendale",
             "shareCapital": "10.000.000 $",
             "phoneNumber": 123456789,
@@ -180,7 +180,7 @@
           {
             "id": 6,
             "companyName": "Intesa San Paola",
-            "city": "Turin",
+            "city": "Milan",
             "field": "Banca",
             "shareCapital": "1.000.000.000.000 $",
             "phoneNumber": 324565846,
@@ -195,7 +195,7 @@
         ]
       },
       "Venice": {
-        "jobOfferts": [
+        "offerts": [
           {
             "id": 5,
             "companyName": ".NET",
