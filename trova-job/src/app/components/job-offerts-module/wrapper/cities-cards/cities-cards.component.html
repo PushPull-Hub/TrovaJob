@@ -1,1 +1,16 @@
-<p>city-card works!</p>
+<div class="main">
+    <div class="card-wrapper" *ngFor="let card of citiesCards">
+        <mat-card class="card c-wrapper">
+            <mat-card-header>
+                <mat-card-title> {{ card.city | titlecase }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="card.imgUrl" alt="Photo of a Shiba Inu">
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <!-- <ng-container *ngIf="admin">
+        <ng-template appCreateCard [card]="addCityCard"></ng-template>
+    </ng-container> -->
+
+</div>
