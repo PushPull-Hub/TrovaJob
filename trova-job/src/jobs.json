@@ -1,12 +1,27 @@
 {
-  "jobs": {
-    "cities": ["Turin", "Milan", "Venice"],
-    "city": {
-      "Turin": {
+  "data": {
+    "cities": [
+      {
         "id": 1,
         "city": "Turin",
         "imgUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/92/Torino_Mole_Piemonte_Italy_Landscape_Travel.jpg/800px-Torino_Mole_Piemonte_Italy_Landscape_Travel.jpg",
-        "jobOffertsAmount": 9,
+        "jobOffertsAmount": 9
+      },
+      {
+        "id": 2,
+        "city": "Milan",
+        "imgUrl": "https://artslife.com/wp-content/uploads/2019/01/MILANO_piazza-duomo-@ansharphoto.jpg",
+        "jobOffertsAmount": 3
+      },
+      {
+        "id": 3,
+        "city": "Venice",
+        "imgUrl": "https://www.fodors.com/wp-content/uploads/2019/11/HERO_Venice__FloatingCityBuilt_iStock-986940360.jpg",
+        "jobOffertsAmount": 2
+      }
+    ],
+    "city": {
+      "Turin": {
         "jobOfferts": [
           {
             "id": 1,
@@ -131,10 +146,6 @@
         ]
       },
       "Milan": {
-        "id": 2,
-        "city": "Milan",
-        "imgUrl": "https://d2bgjx2gb489de.cloudfront.net/gbb-blogs/wp-content/uploads/2018/07/18174234/Milan-Cathedral-870x400.jpg",
-        "jobOffertsAmount": 3,
         "jobOfferts": [
           {
             "id": 3,
@@ -184,10 +195,6 @@
         ]
       },
       "Venice": {
-        "id": 3,
-        "city": "Venice",
-        "imgUrl": "https://www.fodors.com/wp-content/uploads/2019/11/HERO_Venice__FloatingCityBuilt_iStock-986940360.jpg",
-        "jobOffertsAmount": 2,
         "jobOfferts": [
           {
             "id": 5,

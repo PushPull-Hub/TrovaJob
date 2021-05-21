@@ -10,7 +10,7 @@ export class CityCard extends Object {
   city: cityname;
   imgUrl: string;
   jobOffertsAmount: number;
-  jobOfferts: Job[];
+  jobOfferts?: Job[];
 }
 
 type cityname = string;
