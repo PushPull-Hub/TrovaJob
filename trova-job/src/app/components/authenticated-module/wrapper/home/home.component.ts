@@ -23,7 +23,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.SubscribeToLoggedUser =
       this.authenticationService.loggedInUser.subscribe((user) => {
-        if (user) this.loadCards(user.role);
+        if (user && user.id) {
+          this.loadCards(user.role);
+        } else this.authenticationService.logOut();
       });
   }
 
