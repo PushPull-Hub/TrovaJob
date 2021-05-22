@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuard } from './Guards/admin.guard';
 import { AuthenticatedGuard } from './Guards/authenticated.guard';
 import { UnauthenticatedGuard } from './Guards/unauthenticated.guard';
 
@@ -23,6 +24,14 @@ const routes: Routes = [
   },
   {
     path: 'job-offerts',
+    loadChildren: () =>
+      import('./components/job-offerts-module/job-offerts.module').then(
+        (m) => m.JobOffertsModule
+      ),
+  },
+  {
+    path: 'admin/job-offerts',
+    canActivate: [AdminGuard],
     loadChildren: () =>
       import('./components/job-offerts-module/job-offerts.module').then(
         (m) => m.JobOffertsModule
