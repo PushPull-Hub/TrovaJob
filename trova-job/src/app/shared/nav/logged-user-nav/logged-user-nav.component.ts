@@ -48,6 +48,6 @@ export class LoggedUserNavComponent implements OnInit {
   }
 
   logOut() {
-    this.authenticationService.componentRequiredLogOut.next(true);
+    this.authenticationService.logOut();
   }
 }
