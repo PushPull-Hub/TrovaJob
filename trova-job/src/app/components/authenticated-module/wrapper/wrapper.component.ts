@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Configuration } from 'src/app/models/configuration.model';
+import {
+  Configuration,
+  NavbarConfiguration,
+} from 'src/app/models/configuration.model';
 import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ErrorService } from 'src/app/services/error.service';
@@ -14,6 +17,8 @@ import { UserService } from 'src/app/services/user.service';
 export class WrapperComponent implements OnInit, OnDestroy {
   loggedInuser: User;
   configurations: Configuration;
+  navbraConfiguration: NavbarConfiguration | 'defaultConfiguration';
+  navbarLoading: boolean;
   loadDatafromService: Subscription;
   logToSignOutEvent: Subscription;
   constructor(
@@ -34,6 +39,7 @@ export class WrapperComponent implements OnInit, OnDestroy {
   }
 
   private loadData() {
+    this.navbarLoading = true;
     return this.authenticationService.loggedInUser.subscribe(
       async (user: User) => {
         try {
@@ -42,9 +48,12 @@ export class WrapperComponent implements OnInit, OnDestroy {
             this.configurations = await this.userService.getConfigurations(
               user.role
             );
+            this.navbraConfiguration = this.configurations.navLinks;
+            this.navbarLoading = false;
           }
         } catch (error) {
           console.log(error);
+          this.navbarLoading = false;
         }
       }
     );
