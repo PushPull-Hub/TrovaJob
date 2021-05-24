@@ -45,5 +45,10 @@
   "cli": {
     "analytics": "7c345773-fee5-4fb2-9239-bcf5c8ee314c"
   },
-  "defaultProject": "trova-job-lib"
+  "defaultProject": "trova-job-lib",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  }
 }
