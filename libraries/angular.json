@@ -36,13 +36,12 @@
               "projects/trova-job-lib/tsconfig.lib.json",
               "projects/trova-job-lib/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": "7c345773-fee5-4fb2-9239-bcf5c8ee314c"
   },
