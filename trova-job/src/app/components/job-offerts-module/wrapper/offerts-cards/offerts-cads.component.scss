@@ -5,5 +5,43 @@
   padding: 0 16px;
   mat-card {
     margin: 1rem;
+
+    mat-card-header {
+      margin: 1rem 0;
+    }
+
+    mat-card-title {
+      margin: 0;
+    }
+
+    mat-card-subtitle {
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+      font-weight: 100;
+    }
+
+    mat-card-content {
+      margin: 0.2rem 1rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    mat-card-actions {
+      display: flex;
+      float: right;
+      margin: 1rem;
+      padding: 0;
+    }
+  }
+
+  .c-wrapper {
+    border-radius: 0.2rem;
+    border: 1px solid #fff;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.6s;
+  }
+
+  .c-wrapper:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }

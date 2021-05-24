@@ -1,14 +1,15 @@
 <div class="main">
     <ng-container *ngIf="!loading  ; else spinner">
         <ng-container *ngFor="let offert of jobsOfferts">
-            <mat-card>
+            <mat-card class="c-wrapper">
                 <mat-card-header>
-                    <mat-card-title>{{offert.companyName}}</mat-card-title>
+                    <mat-card-title>{{offert.companyName | uppercase }}</mat-card-title>
+                    <mat-card-subtitle> {{ offert.field | titlecase }} </mat-card-subtitle>
                     <mat-card-subtitle *ngIf="errorOnLoading">There was an error on loading Jobs offerts
                     </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
-                    {{ offert | json }}
+                    {{ offert.request.description }}
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button color="primary">Apply </button>
