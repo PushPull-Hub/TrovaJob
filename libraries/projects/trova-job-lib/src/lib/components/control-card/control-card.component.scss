@@ -1,0 +1,40 @@
+.card {
+  max-width: 300px;
+  min-height: 23.1rem;
+  margin: 1rem;
+  background: #dfe3ee;
+}
+
+.c-wrapper {
+  border-radius: 15px;
+  border: 1px solid #dddfe2;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.6s;
+}
+
+.c-wrapper:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+mat-card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  mat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mat-card-image {
+    margin: 5rem;
+  }
+
+  mat-card-actions {
+    width: 100%;
+
+    fa-icon {
+      float: right;
+    }
+  }
+}

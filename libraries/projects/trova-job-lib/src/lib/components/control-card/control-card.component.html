@@ -1,1 +1,11 @@
-<p>control-card works!</p>
+<mat-card class="card c-wrapper" (click)="onCardClick(card.onClickNavigateTo)">
+    <mat-card-header>
+        <mat-card-title> {{ card.title | titlecase }} </mat-card-title>
+    </mat-card-header>
+    <div mat-card-image>
+        <ng-container #iconContainer></ng-container>
+    </div>
+    <mat-card-actions>
+        <ng-container #adminIconContainer></ng-container>
+    </mat-card-actions>
+</mat-card>
