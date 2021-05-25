@@ -20,7 +20,6 @@ export class WrapperComponent implements OnInit, OnDestroy {
   navbraConfiguration: NavbarConfiguration | 'defaultConfiguration';
   navbarLoading: boolean;
   loadDatafromService: Subscription;
-  logToSignOutEvent: Subscription;
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -29,18 +28,11 @@ export class WrapperComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadDatafromService = this.loadData();
-    this.logToSignOutEvent = this.IfChildComponentRequiredLogOut();
-  }
-
-  private IfChildComponentRequiredLogOut() {
-    return this.authenticationService.loggingOut.subscribe((value: boolean) => {
-      if (value) this.authenticationService.logOut();
-    });
   }
 
   private loadData() {
     this.navbarLoading = true;
-    return this.authenticationService.loggedInUser.subscribe(
+    return this.authenticationService.currentLoggedUser.subscribe(
       async (user: User) => {
         try {
           if (user) {
@@ -61,6 +53,5 @@ export class WrapperComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.loadDatafromService.unsubscribe();
-    this.logToSignOutEvent.unsubscribe();
   }
 }

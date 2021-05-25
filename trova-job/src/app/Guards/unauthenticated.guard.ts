@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { TrovaJobHelperService } from '../services/helper.service';
 
@@ -14,26 +8,17 @@ import { TrovaJobHelperService } from '../services/helper.service';
 })
 export class UnauthenticatedGuard implements CanActivate {
   constructor(
-    private helperService: TrovaJobHelperService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private helperService: TrovaJobHelperService
   ) {}
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    return this.authenticationService
-      .isAuthenticated()
-      .then((authenticated: boolean) => {
-        if (authenticated) {
-          this.helperService.redirectTo('app/home');
-          return false;
-        } else {
-          return true;
-        }
-      });
+  canActivate(): Promise<boolean> {
+    return this.authenticationService.getloggedInUser().then((value) => {
+      if (value) {
+        this.helperService.redirectTo('app/home');
+        return false;
+      } else {
+        return true;
+      }
+    });
   }
 }

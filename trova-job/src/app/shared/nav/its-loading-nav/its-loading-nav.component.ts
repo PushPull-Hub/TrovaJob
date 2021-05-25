@@ -14,6 +14,7 @@ export class ItsLoadingNavComponent implements OnInit {
   ngOnInit(): void {}
 
   logOut() {
-    this.authenticationService.componentRequiredLogOut.next(true);
+    // this.authenticationService.componentRequiredLogOut.next(true);
+    this.authenticationService.logOut();
   }
 }

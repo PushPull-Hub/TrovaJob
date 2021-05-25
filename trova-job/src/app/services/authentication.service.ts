@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FireStoreCustomService } from './fire-store.service';
@@ -15,13 +15,10 @@ import { User } from 'src/app/models/user.model';
 export class AuthenticationService {
   private loggedInUserSubject: BehaviorSubject<User> =
     new BehaviorSubject<User>(null);
-  loggedInUser = this.loggedInUserSubject.asObservable();
+
+  currentLoggedUser: Observable<User> = this.loggedInUserSubject.asObservable();
 
   isFormLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
-
-  componentRequiredLogOut: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(null);
-  loggingOut = this.componentRequiredLogOut.asObservable();
 
   constructor(
     private angularFireAuth: AngularFireAuth,
@@ -29,6 +26,23 @@ export class AuthenticationService {
     private helperFunctionsService: TrovaJobHelperService,
     private errorService: ErrorService
   ) {}
+
+  getloggedInUser(): Promise<User> {
+    return new Promise<User>((resolve, reject) => {
+      this.currentLoggedUser.subscribe(async (user) => {
+        if (user) {
+          resolve(user);
+        } else {
+          const firestoreUser =
+            await this.angularFirestore.getLoggedInUserDataFromFireStore();
+          firestoreUser && firestoreUser.id
+            ? (this.loggedInUserSubject.next(firestoreUser),
+              resolve(firestoreUser))
+            : resolve(null);
+        }
+      });
+    });
+  }
 
   async signIn(email: string, password: string): Promise<void> {
     try {
@@ -84,46 +98,5 @@ export class AuthenticationService {
         );
         this.errorService.errorOnSignOut.next(customError);
       });
-  }
-
-  isAuthenticated(): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      this.loggedInUser.subscribe((value) => {
-        if (value && value.id) {
-          resolve(true);
-        } else {
-          this.angularFireAuth.onAuthStateChanged(async (user) => {
-            if (user && user.uid) {
-              const userData =
-                await this.angularFirestore.getLoggedInUserDataFromFireStore();
-              this.loggedInUserSubject.next(userData);
-              resolve(true);
-            } else {
-              resolve(false);
-            }
-          });
-        }
-      });
-    });
-  }
-
-  getloggedInUser(): Promise<User> {
-    return new Promise<User>(async (resolve, reject) => {
-      this.loggedInUser.subscribe(async (user) => {
-        if (user && user.id) {
-          resolve(user);
-        } else {
-          try {
-            const firestoreUser =
-              await this.angularFirestore.getLoggedInUserDataFromFireStore();
-            firestoreUser && firestoreUser.id
-              ? resolve(firestoreUser)
-              : resolve(null);
-          } catch (error) {
-            resolve(null);
-          }
-        }
-      });
-    });
   }
 }

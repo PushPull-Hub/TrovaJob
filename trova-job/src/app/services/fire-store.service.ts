@@ -52,6 +52,7 @@ export class FireStoreCustomService {
               } catch (error) {
                 const customError = new CustomErrorObject(error.message, 401);
                 this.errorService.errorOnSignIn.next(customError);
+                resolve(null);
               }
             });
         } else {

@@ -4,7 +4,6 @@ import { AppCards } from 'src/app/models/configuration.model';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserService } from 'src/app/services/user.service';
-type UserType = 'admin' | 'user' | 'company';
 
 @Component({
   selector: 'app-home',
@@ -22,10 +21,10 @@ export class HomeComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.SubscribeToLoggedUser =
-      this.authenticationService.loggedInUser.subscribe((user) => {
+      this.authenticationService.currentLoggedUser.subscribe((user) => {
         if (user && user.id) {
           this.loadCards(user.role);
-        } else this.authenticationService.logOut();
+        }
       });
   }
 
