@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApplicationPossiblePaths } from 'src/app/models/app-paths.model';
+import { ApplicationPossiblePaths } from 'src/app/models/types/app-paths.model';
 import { JobOffert } from 'src/app/models/job.model';
 import { TrovaJobHelperService } from 'src/app/services/helper.service';
 import { JobsOffertsService } from 'src/app/services/jobs-offerts.service';

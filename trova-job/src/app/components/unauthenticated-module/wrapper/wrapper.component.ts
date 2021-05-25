@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { ApplicationPossiblePaths } from 'src/app/models/app-paths.model';
+import { ApplicationPossiblePaths } from 'src/app/models/types/app-paths.model';
 import { TrovaJobHelperService } from 'src/app/services/helper.service';
 import { AuthenticationService } from '../../../services/authentication.service';
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { ApplicationPossiblePaths } from '../models/app-paths.model';
+import { ApplicationPossiblePaths } from '../models/types/app-paths.model';
 import { Configuration } from '../models/configuration.model';
 
 import { User } from '../models/user.model';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationPossiblePaths } from 'src/app/models/app-paths.model';
+import { ApplicationPossiblePaths } from 'src/app/models/types/app-paths.model';
 import {
   Configuration,
   NavbarConfiguration,
