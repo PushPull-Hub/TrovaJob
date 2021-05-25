@@ -1,7 +1,6 @@
 import {
   ComponentFactoryResolver,
   Directive,
-  Injector,
   Input,
   OnInit,
   ViewContainerRef,

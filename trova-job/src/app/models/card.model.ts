@@ -1,4 +1,4 @@
-import { ApplicationPossiblePaths } from './app-paths.model';
+import { ApplicationPossiblePaths } from './types/app-paths.model';
 
 export class Card {
   constructor(title: CardTitle, icon: CardIcon) {
@@ -12,7 +12,7 @@ export class Card {
   onClickNavigateTo: ApplicationPossiblePaths;
 }
 
-type CardTitle =
+export type CardTitle =
   | 'manage users'
   | 'manage job offerts'
   | 'check job offerts'
@@ -21,7 +21,7 @@ type CardTitle =
   | 'update profile'
   | 'add place';
 
-type CardIcon =
+export type CardIcon =
   | 'searchIcon'
   | 'UsersSettingsIcon'
   | 'profileSettingsIcon'
