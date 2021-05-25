@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+
+  .card-wrapper,
+  .spinner-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .card,
+    .spinner-card {
+      min-height: 23.1rem;
+      margin: 1rem;
+      background: #dfe3ee;
+    }
+
+    .card {
+      max-width: 300px;
+      min-width: 15rem;
+    }
+
+    .spinner-card {
+      min-width: 19rem;
+      justify-content: center;
+    }
+
+    mat-card {
+      display: inline-flex;
+      flex-wrap: wrap;
+
+      mat-card-header {
+        display: flex;
+        width: 100%;
+      }
+      mat-card-actions {
+        width: 100%;
+
+        fa-icon {
+          float: right;
+        }
+      }
+    }
+
+    .c-wrapper {
+      border-radius: 15px;
+      border: 1px solid #dddfe2;
+      margin-bottom: 1rem;
+      transition: box-shadow 0.6s;
+    }
+
+    .c-wrapper:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+}
