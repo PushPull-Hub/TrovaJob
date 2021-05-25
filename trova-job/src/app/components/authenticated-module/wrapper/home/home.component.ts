@@ -26,6 +26,15 @@ export class HomeComponent implements OnInit {
           this.loadCards(user.role);
         }
       });
+    setTimeout(() => {
+      this.checkifstillLoading();
+    }, 2000);
+  }
+
+  private checkifstillLoading() {
+    if (this.isCardsLoading) {
+      this.authenticationService.logOut();
+    }
   }
 
   private async loadCards(userRole) {
