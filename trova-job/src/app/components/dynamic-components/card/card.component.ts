@@ -1,36 +1,9 @@
-import {
-  Component,
-  OnInit,
-  ViewContainerRef,
-  ViewChild,
-  ComponentFactoryResolver,
-  Input,
-  OnDestroy,
-} from '@angular/core';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import {
-  faBriefcase,
-  faHeart,
-  faIdCard,
-  faSearch,
-  faUsersCog,
-  faUserShield,
-  faFolderPlus,
-} from '@fortawesome/free-solid-svg-icons';
-import { ApplicationPossiblePaths } from 'src/app/models/app-paths.model';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { ApplicationPossiblePaths } from 'src/app/models/types/app-paths.model';
 import { Card } from 'src/app/models/card.model';
+import { IconConfigurations } from 'src/app/models/types/icon-configs.type';
 import { TrovaJobHelperService } from 'src/app/services/helper.service';
 
-const importedIcons: { [key: string]: IconProp } = {
-  searchIcon: faSearch,
-  UsersSettingsIcon: faUsersCog,
-  profileSettingsIcon: faIdCard,
-  jobsSettingsIcon: faBriefcase,
-  adminIcon: faUserShield,
-  favIcon: faHeart,
-  addJobIcon: faFolderPlus,
-};
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -38,52 +11,40 @@ const importedIcons: { [key: string]: IconProp } = {
 })
 export class CardComponent implements OnInit, OnDestroy {
   @Input() card: Card;
-  @ViewChild('iconContainer', { static: true, read: ViewContainerRef })
-  iconContainer: ViewContainerRef;
-  @ViewChild('adminIconContainer', { static: true, read: ViewContainerRef })
-  adminIconContainer: ViewContainerRef;
   isLoading: boolean;
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private helperService: TrovaJobHelperService
-  ) {}
+  mainIconconfigurations: IconConfigurations;
+  adminIconconfigurations: IconConfigurations;
+
+  constructor(private helperService: TrovaJobHelperService) {}
 
   ngOnInit(): void {
     this.fakeLoader();
   }
 
-  createIcons(card: Card) {
-    if (card.userType === 'admin') {
-      this.createAdminIcon();
-    }
-    const factory =
-      this.componentFactoryResolver.resolveComponentFactory(FaIconComponent);
-    const componentRef = this.iconContainer.createComponent(factory);
-    componentRef.instance.icon = importedIcons[card.icon];
-    componentRef.instance.size = '10x';
-    componentRef.instance.classes = ['fontawesome-icon'];
-    componentRef.instance.styles = { color: '#303f9f' };
-    componentRef.instance.render();
-  }
-
-  createAdminIcon() {
-    const factory =
-      this.componentFactoryResolver.resolveComponentFactory(FaIconComponent);
-    const componentRef = this.adminIconContainer.createComponent(factory);
-    componentRef.instance.icon = importedIcons['adminIcon'];
-    componentRef.instance.size = '2x';
-    componentRef.instance.classes = ['admin-icon'];
-    componentRef.instance.styles = { color: '#dd1b16' };
-    componentRef.instance.render();
-  }
-
   fakeLoader() {
     this.isLoading = true;
-    this.createIcons(this.card);
+    this.generateIconsConfigurations();
     setTimeout(() => {
       this.isLoading = false;
     }, 900);
+  }
+
+  private generateIconsConfigurations(card: Card = this.card) {
+    if (card.userType === 'admin') {
+      this.adminIconconfigurations = {
+        iconName: 'adminIcon',
+        size: '2x',
+        classes: ['fontawesome-icon'],
+        styles: { color: '#dd1b16' },
+      };
+    }
+    this.mainIconconfigurations = {
+      iconName: card.icon,
+      size: '10x',
+      classes: ['fontawesome-icon'],
+      styles: { color: '#303f9f' },
+    };
   }
 
   onCardClick(path: ApplicationPossiblePaths) {
