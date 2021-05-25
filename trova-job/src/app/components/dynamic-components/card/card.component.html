@@ -3,10 +3,10 @@
         <mat-card-title> {{ card.title | titlecase }} </mat-card-title>
     </mat-card-header>
     <div mat-card-image>
-        <ng-container #iconContainer></ng-container>
+        <ng-template appCreatIcon [configurations]="mainIconconfigurations"></ng-template>
     </div>
     <mat-card-actions>
-        <ng-container #adminIconContainer></ng-container>
+        <ng-template appCreatIcon [configurations]="adminIconconfigurations"></ng-template>
     </mat-card-actions>
 
 </mat-card>
