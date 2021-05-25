@@ -7,6 +7,7 @@
     <ng-template #cardsAreLoaded>
         <ng-container *ngFor="let card of cards['home']">
             <ng-template appCreateCard [card]="card"></ng-template>
+            <!-- <tj-control-card [card]="card"></tj-control-card> -->
         </ng-container>
     </ng-template>
 
