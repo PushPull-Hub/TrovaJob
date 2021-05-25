@@ -28,7 +28,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "firebase": "^7.0 || ^8.0",
     "rxjs": "~6.5.4",
-    "trova-job-lib": "^0.0.1",
     "tslib": "^1.10.0",
     "uuid": "^3.4.0",
     "zone.js": "~0.10.2"
