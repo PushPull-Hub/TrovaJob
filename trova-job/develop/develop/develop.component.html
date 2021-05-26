@@ -1,1 +1,47 @@
-<app-nav [configurations]="'defaultConfiguration'"></app-nav>
+<div class="main-container">
+    <app-nav [configurations]="'defaultConfiguration'"></app-nav>
+
+    <ng-container *ngIf="false">
+        <mat-progress-bar [mode]="'indeterminate'" color="warn"></mat-progress-bar>
+    </ng-container>
+
+    <div class="c-profile">
+
+        <mat-card class="cover">
+            <mat-card-content>
+                <div class="avatar-image-wrapper">
+                    <img class="avatar-image" [src]="avatarImageUrl">
+                    <h1 class="avatar-name"> {{ 'John Doe' | titlecase }} </h1>
+                </div>
+                <div class="cover-image-wrapper">
+                    <img class="cover-image" [src]="coverImageUrl" />
+                </div>
+            </mat-card-content>
+            <mat-card-actions class="c-buttons">
+                <button mat-fab>
+                    <mat-icon>person</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>plus_one</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>filter_list</mat-icon>
+                </button>
+                <button mat-fab>
+                    <mat-icon>home</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+
+
+
+        <mat-card class="profile-body">
+
+        </mat-card>
+
+
+
+    </div>
+
+    <app-cloud-svg></app-cloud-svg>
+</div>
