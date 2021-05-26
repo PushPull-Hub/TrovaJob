@@ -25,6 +25,7 @@ import { CreateCardDirective } from '../directives/create-card.directive';
 import { ProfileComponent } from './profile/profile.component';
 import { TestAppComponent } from 'develop/test-app/test-app.component';
 import { DevelopComponent } from 'develop/develop/develop.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -37,6 +38,7 @@ const AngularMaterialModules = [
   MatNativeDateModule,
   MatProgressSpinnerModule,
   MatTooltipModule,
+  MatProgressBarModule,
 ];
 @NgModule({
   declarations: [
