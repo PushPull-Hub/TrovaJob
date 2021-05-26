@@ -22,6 +22,7 @@ import { DefaultNavComponent } from './nav/default-nav/default-nav.component';
 import { LoggedUserNavComponent } from './nav/logged-user-nav/logged-user-nav.component';
 import { ItsLoadingNavComponent } from './nav/its-loading-nav/its-loading-nav.component';
 import { CreateCardDirective } from '../directives/create-card.directive';
+import { ProfileComponent } from './profile/profile.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -44,6 +45,7 @@ const AngularMaterialModules = [
     LoggedUserNavComponent,
     ItsLoadingNavComponent,
     CreateCardDirective,
+    ProfileComponent,
   ],
   imports: [CommonModule, ...AngularMaterialModules, FontAwesomeModule],
   exports: [
@@ -52,6 +54,7 @@ const AngularMaterialModules = [
     NavComponent,
     ...AngularMaterialModules,
     CreateCardDirective,
+    ProfileComponent,
   ],
 })
 export class SharedModule {}

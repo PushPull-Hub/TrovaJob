@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { HomeComponent } from './wrapper/home/home.component';
-import { ProfileComponent } from './wrapper/profile/profile.component';
 import { CardComponent } from '../dynamic-components/card/card.component';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -43,7 +42,6 @@ const AngularMaterialModules = [
   declarations: [
     WrapperComponent,
     HomeComponent,
-    ProfileComponent,
     CardComponent,
     CreateIconDirective,
   ],

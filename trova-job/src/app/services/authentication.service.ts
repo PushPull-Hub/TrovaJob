@@ -99,4 +99,11 @@ export class AuthenticationService {
         this.errorService.errorOnSignOut.next(customError);
       });
   }
+
+  logMeOutIfImNotLoggedIn() {
+    return this.currentLoggedUser.subscribe((value: User) => {
+      if (!value)
+        this.helperFunctionsService.redirectTo('authentication/sign-in');
+    });
+  }
 }
