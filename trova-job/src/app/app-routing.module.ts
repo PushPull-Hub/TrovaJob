@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DevelopComponent } from './develop/develop/develop.component';
-import { TestAppComponent } from './develop/test-app/test-app.component';
+import { DevelopComponent } from 'develop/develop/develop.component';
+import { TestAppComponent } from 'develop/test-app/test-app.component';
 import { AdminGuard } from './Guards/admin.guard';
 import { AuthenticatedGuard } from './Guards/authenticated.guard';
 import { UnauthenticatedGuard } from './Guards/unauthenticated.guard';
