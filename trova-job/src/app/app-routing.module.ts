@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DevelopComponent } from './develop/develop/develop.component';
+import { TestAppComponent } from './develop/test-app/test-app.component';
 import { AdminGuard } from './Guards/admin.guard';
 import { AuthenticatedGuard } from './Guards/authenticated.guard';
 import { UnauthenticatedGuard } from './Guards/unauthenticated.guard';
@@ -36,6 +38,15 @@ const routes: Routes = [
       import('./components/job-offerts-module/job-offerts.module').then(
         (m) => m.JobOffertsModule
       ),
+  },
+  // development purposes
+  {
+    path: 'test',
+    component: TestAppComponent,
+  },
+  {
+    path: 'dev',
+    component: DevelopComponent,
   },
 ];
 

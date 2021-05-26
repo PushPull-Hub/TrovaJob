@@ -23,6 +23,8 @@ import { LoggedUserNavComponent } from './nav/logged-user-nav/logged-user-nav.co
 import { ItsLoadingNavComponent } from './nav/its-loading-nav/its-loading-nav.component';
 import { CreateCardDirective } from '../directives/create-card.directive';
 import { ProfileComponent } from './profile/profile.component';
+import { DevelopComponent } from '../develop/develop/develop.component';
+import { TestAppComponent } from '../develop/test-app/test-app.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -38,6 +40,8 @@ const AngularMaterialModules = [
 ];
 @NgModule({
   declarations: [
+    TestAppComponent,
+    DevelopComponent,
     CloudSvgComponent,
     AccessDeniedComponent,
     NavComponent,
@@ -49,12 +53,17 @@ const AngularMaterialModules = [
   ],
   imports: [CommonModule, ...AngularMaterialModules, FontAwesomeModule],
   exports: [
+    TestAppComponent,
+    DevelopComponent,
     CloudSvgComponent,
     AccessDeniedComponent,
     NavComponent,
-    ...AngularMaterialModules,
+    DefaultNavComponent,
+    LoggedUserNavComponent,
+    ItsLoadingNavComponent,
     CreateCardDirective,
     ProfileComponent,
+    ...AngularMaterialModules,
   ],
 })
 export class SharedModule {}

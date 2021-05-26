@@ -23,7 +23,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { CreateIconDirective } from 'src/app/directives/create-Icon.directive';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TrovaJobLibModule } from 'trova-job-lib';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -51,7 +51,7 @@ const AngularMaterialModules = [
     SharedModule,
     ...AngularMaterialModules,
     FontAwesomeModule,
-    TrovaJobLibModule,
+    NgbModule,
   ],
 })
 export class AuthenticatedModule {}
