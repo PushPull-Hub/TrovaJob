@@ -26,6 +26,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { TestAppComponent } from 'develop/test-app/test-app.component';
 import { DevelopComponent } from 'develop/develop/develop.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ProfileCoverComponent } from './profile/first-column/profile-cover.component';
+import { ProfileBodyComponent } from './profile/second-column/profile-body.component';
+import { ProfileCoverLoadingComponent } from './profile/first-column/profile-cover-loading/profile-cover-loading.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -39,6 +43,7 @@ const AngularMaterialModules = [
   MatProgressSpinnerModule,
   MatTooltipModule,
   MatProgressBarModule,
+  MatTabsModule,
 ];
 @NgModule({
   declarations: [
@@ -52,6 +57,9 @@ const AngularMaterialModules = [
     ItsLoadingNavComponent,
     CreateCardDirective,
     ProfileComponent,
+    ProfileCoverComponent,
+    ProfileBodyComponent,
+    ProfileCoverLoadingComponent,
   ],
   imports: [CommonModule, ...AngularMaterialModules, FontAwesomeModule],
   exports: [
