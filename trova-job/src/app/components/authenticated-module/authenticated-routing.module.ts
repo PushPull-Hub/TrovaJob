@@ -14,7 +14,6 @@ const routes: Routes = [
     component: WrapperComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'profile', component: ProfileComponent },
       {
         path: 'admin',
         canActivate: [AdminGuard],
@@ -32,6 +31,7 @@ const routes: Routes = [
       { path: 'access-denied', component: AccessDeniedComponent },
     ],
   },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
