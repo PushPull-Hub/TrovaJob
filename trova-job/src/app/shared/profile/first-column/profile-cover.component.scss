@@ -1,0 +1,107 @@
+.cover,
+.cover-Onloading {
+  display: flex;
+  margin: 0px 15rem;
+  padding: 0;
+  border-bottom: 5px solid #303f9f;
+
+  mat-card-content {
+    display: flex;
+    width: 100%;
+    margin: 0;
+
+    .user {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: 50%;
+      left: 6%;
+      z-index: 10;
+
+      // .user-image {
+      //   border: 5px solid white;
+      // }
+
+      // .user-image-Onloading,.user-image  {
+      //   border: 5px solid #303f9f;
+      //   background: white;
+      // }
+
+      .user-image,
+      .user-image-Onloading {
+        border: 5px solid #303f9f;
+        background: white;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+        z-index: 9;
+      }
+
+      .user-name,
+      .user-name-Onloading {
+        color: white;
+        z-index: 10;
+        margin: 0 0 0 1.5rem;
+
+        h2 {
+          font-size: 4rem;
+        }
+      }
+    }
+
+    .cover-image-wrapper {
+      width: 100%;
+      height: max-content;
+      overflow: hidden;
+      background-size: cover;
+
+      .cover-image {
+        width: 100%;
+        height: 25rem;
+        transition: 350ms ease;
+        cursor: pointer;
+      }
+
+      .cover-image:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    .cover-image-wrapper-Onloading {
+      width: 100%;
+      height: 25rem;
+    }
+  }
+
+  .c-buttons,
+  .c-buttons-Onloading {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+    height: 25rem;
+
+    button {
+      margin: 1rem;
+      background-color: white;
+      color: #303f9f;
+    }
+
+    button:hover {
+      // 1
+      color: #dd1b16;
+      // 2
+      // background-color: #303f9f;
+      // color: white;
+      // 3
+      // background-color: #dd1b16;
+      // color: white;
+    }
+  }
+}
+.cover-Onloading {
+  background: slategrey;
+}
