@@ -1,0 +1,23 @@
+<mat-card class="cover-Onloading">
+    <mat-card-content>
+        <div class="user">
+            <img class="user-image-Onloading"
+                src="https://www.culturalcruiseseurope.com/wp-content/themes/cchbasetheme/assets/img/ajax-loader.gif">
+            <span class="user-name-Onloading">
+                <h2>{{ 'loading' | titlecase }}</h2>
+                <h3>{{ 'loading...' | titlecase }} </h3>
+            </span>
+        </div>
+        <div class="cover-image-wrapper-Onloading">
+            <img class="cover-image-Onloading"
+                src="https://www.culturalcruiseseurope.com/wp-content/themes/cchbasetheme/assets/img/ajax-loader.gif" />
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="c-buttons-Onloading">
+        <ng-container *ngFor="let item of [1,2,3,4]">
+            <button mat-fab>
+                <mat-spinner [diameter]="25"></mat-spinner>
+            </button>
+        </ng-container>
+    </mat-card-actions>
+</mat-card>
