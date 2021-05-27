@@ -12,12 +12,14 @@
 
   .cover {
     display: flex;
-    margin: 0 5rem;
+    margin: 0px 15rem;
+    padding: 0;
 
     mat-card-content {
       display: flex;
       width: 100%;
       margin: 0;
+      // margin-bottom: 4rem;
 
       .cover-image-wrapper {
         width: 100%;
@@ -37,7 +39,7 @@
         }
       }
 
-      .avatar-image-wrapper {
+      .user {
         position: absolute;
         display: flex;
         align-items: center;
@@ -45,7 +47,7 @@
         left: 6%;
         z-index: 10;
 
-        .avatar-image {
+        .user-image {
           height: 15rem;
           width: 15rem;
           border-radius: 50%;
@@ -53,11 +55,14 @@
           z-index: 9;
         }
 
-        .avatar-name {
+        .user-name {
           color: white;
           z-index: 10;
           margin: 0 0 0 1.5rem;
-          font-size: 3rem;
+
+          h2 {
+            font-size: 4rem;
+          }
         }
       }
     }
@@ -91,11 +96,44 @@
     }
   }
 
-  .profile-body {
-    margin: 2rem 3rem;
+  .c-progress-bar {
+    margin: 0.2rem 15rem;
+    // padding-top: 0;
+    // padding: 1rem;
+  }
+  .mat-tab-group.mat-primary .mat-ink-bar,
+  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: unset;
+  }
 
-    .c-cloud > svg {
-      width: 100%;
+  .c-content-loading {
+    margin: 0 15rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50rem;
+  }
+
+  .mat-tab-header {
+    border-bottom: 0;
+
+    .mat-tab-label-container {
+      // border: 1px solid #303f9f;
+      background: white;
+      margin: 1rem 15rem 0;
     }
+
+    .mat-tab-label-content {
+      color: #303f9f;
+    }
+  }
+
+  .profile-body {
+    border: 1px solid #dd1b16;
+    margin: 1rem 15rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
   }
 }

@@ -6,12 +6,14 @@
     </ng-container>
 
     <div class="c-profile">
-
         <mat-card class="cover">
             <mat-card-content>
-                <div class="avatar-image-wrapper">
-                    <img class="avatar-image" [src]="avatarImageUrl">
-                    <h1 class="avatar-name"> {{ 'John Doe' | titlecase }} </h1>
+                <div class="user">
+                    <img class="user-image" [src]="avatarImageUrl">
+                    <span class="user-name">
+                        <h2>{{ 'John Doe' | titlecase }}</h2>
+                        <h3>senior web developer </h3>
+                    </span>
                 </div>
                 <div class="cover-image-wrapper">
                     <img class="cover-image" [src]="coverImageUrl" />
@@ -33,13 +35,32 @@
             </mat-card-actions>
         </mat-card>
 
+        <ng-container *ngIf="(asyncTabs | async) === null">
+            <mat-tab-group mat-align-tabs="end">
+                <mat-tab *ngFor="let tab of [1,2,3]">
+                    <ng-template mat-tab-label>loading...</ng-template>
+                    <div class="c-progress-bar">
+                        <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+                    </div>
+                    <mat-card class="c-content-loading">
+                        <span>
+                            loading ...
+                        </span>
+                    </mat-card>
+                </mat-tab>
+            </mat-tab-group>
+        </ng-container>
 
-
-        <mat-card class="profile-body">
-
-        </mat-card>
-
-
+        <mat-tab-group mat-align-tabs="end">
+            <mat-tab *ngFor="let tab of asyncTabs | async">
+                <ng-template mat-tab-label>{{tab.label | uppercase }}</ng-template>
+                <mat-card class="profile-body">
+                    <div>
+                        {{tab.content }}
+                    </div>
+                </mat-card>
+            </mat-tab>
+        </mat-tab-group>
 
     </div>
 
