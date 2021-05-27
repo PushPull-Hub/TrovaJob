@@ -16,4 +16,10 @@ export class Birthday extends Object {
   // constructor(public day: number, public month: number, public year: number) {}
 }
 
+export class miniUserObject extends Object {
+  id: string;
+  username: string;
+  role: Role;
+}
+
 export type Role = 'admin' | 'user' | 'company';

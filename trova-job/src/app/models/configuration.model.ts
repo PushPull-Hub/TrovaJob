@@ -1,9 +1,11 @@
 import { Card } from './card.model';
+import { miniUserObject, User } from './user.model';
 
 export class Configuration extends Object {
   abilities: UserAbilities;
   cards: AppCards;
   navLinks: NavbarConfiguration | 'defaultConfiguration';
+  profile: ProfileConfiguration;
 }
 
 export class UserAbilities extends Object {
@@ -43,4 +45,21 @@ class UserButton extends Object {
   'type': string;
   'icon': string;
   'onClickNavigateTo': string;
+}
+
+export class ProfileConfiguration extends Object {
+  user: User;
+  cover: ProfileCoverConfiguration;
+  body: ProfileBodyConfiguration;
+}
+
+export class ProfileCoverConfiguration extends Object {
+  user: miniUserObject;
+  coverImageUrl: string | 'default';
+  avatarImageUrl: string | 'default';
+  buttons: UserButton[];
+}
+
+export class ProfileBodyConfiguration {
+  id: number;
 }
