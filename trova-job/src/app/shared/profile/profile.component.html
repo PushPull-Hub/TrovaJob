@@ -1,1 +1,12 @@
-<p>profile works!</p>
+<div class="main-container">
+    <app-nav [configurations]="'defaultConfiguration'"></app-nav>
+    <ng-container *ngIf="false">
+        <mat-progress-bar [mode]="'indeterminate'" color="warn"></mat-progress-bar>
+    </ng-container>
+
+    <div class="c-profile">
+        <!-- <app-profile-cover [configurations]="configurations.ProfileCoverConfiguration"></app-profile-cover> -->
+        <app-profile-cover></app-profile-cover>
+        <!-- <app-profile-body></app-profile-body> -->
+    </div>
+</div>
