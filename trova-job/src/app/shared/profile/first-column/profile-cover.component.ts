@@ -36,7 +36,7 @@ export class ProfileCoverComponent implements OnInit {
       },
     ],
   };
-  isLoading: boolean = true;
+  isLoading: boolean = false;
 
   constructor() {}
 
