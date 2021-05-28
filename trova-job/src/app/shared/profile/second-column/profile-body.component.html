@@ -1,7 +1,7 @@
 <div class="c-links-and-contents">
     <mat-tab-group mat-align-tabs="end">
-
-        <ng-template [ngIf]="(asyncTabs | async)?.length > 1" [ngIfElse]="loading">
+        <ng-container *ngIf="(asyncTabs | async)?.length > 1; then showContent; else showSpinner"></ng-container>
+        <ng-template #showContent>
             <mat-tab *ngFor="let tab of (asyncTabs | async)">
                 <ng-template mat-tab-label>{{tab.label }}</ng-template>
                 <mat-card class="profile-body">
@@ -11,13 +11,15 @@
                 </mat-card>
             </mat-tab>
         </ng-template>
-
-        <ng-template #loading>
-            <mat-card class="profile-body-loading">
-                <div>
-                    <app-profile-body-loading></app-profile-body-loading>
-                </div>
-            </mat-card>
+        <ng-template #showSpinner>
+            <mat-tab>
+                <ng-template mat-tab-label></ng-template>
+                <mat-card class="profile-body-loading">
+                    <div>
+                        <app-profile-body-loading></app-profile-body-loading>
+                    </div>
+                </mat-card>
+            </mat-tab>
         </ng-template>
     </mat-tab-group>
 </div>

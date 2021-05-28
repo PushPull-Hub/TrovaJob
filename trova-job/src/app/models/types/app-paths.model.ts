@@ -3,7 +3,7 @@ export type ApplicationPossiblePaths =
   | 'authentication/sign-in'
   | 'authentication/sign-up'
   | 'app/home'
-  | 'app/profile'
+  | 'profile'
   | 'check-offerts'
   | 'app/admin/manage-users'
   | 'app/admin/manage-jobs'

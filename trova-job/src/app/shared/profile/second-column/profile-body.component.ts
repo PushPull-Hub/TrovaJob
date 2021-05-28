@@ -19,8 +19,8 @@ export class ProfileBodyComponent implements OnInit {
           { label: 'offerts', content: 'offerts-content' },
           { label: 'documents', content: 'documents-contents' },
         ]);
-      }, 2000);
-    }).pipe(shareReplay());
+      }, 1500);
+    }).pipe(shareReplay(1));
   }
 
   ngOnInit(): void {}

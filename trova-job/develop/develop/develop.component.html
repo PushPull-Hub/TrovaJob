@@ -1,0 +1,21 @@
+<!-- 
+    <ng-container *ngIf="(asyncTabs | async)?.length > 1; then showContent; else showSpinner"></ng-container>
+
+<ng-template #showContent>
+    <mat-tab *ngFor="let tab of (asyncTabs | async)">
+        <ng-template mat-tab-label>{{tab.label }}</ng-template>
+        <mat-card class="profile-body">
+            <div>
+                {{tab.content }}
+            </div>
+        </mat-card>
+    </mat-tab>
+</ng-template>
+<ng-template #showSpinner>
+    <mat-card class="profile-body-loading">
+        <div>
+            loading
+        </div>
+    </mat-card>
+</ng-template> 
+-->
