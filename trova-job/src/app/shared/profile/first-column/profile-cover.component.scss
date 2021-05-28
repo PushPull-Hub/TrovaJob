@@ -3,13 +3,14 @@
   display: flex;
   margin: 0px 15rem;
   padding: 0;
-  border-bottom: 5px solid #303f9f;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  border-radius: 0;
 
   mat-card-content {
     display: flex;
     width: 100%;
     margin: 0;
-    margin-bottom: 4rem;
+    // margin-bottom: 4rem;
 
     .user {
       position: absolute;
@@ -18,15 +19,6 @@
       top: 50%;
       left: 6%;
       z-index: 10;
-
-      // .user-image {
-      //   border: 5px solid white;
-      // }
-
-      // .user-image-Onloading,.user-image  {
-      //   border: 5px solid #303f9f;
-      //   background: white;
-      // }
 
       .user-image,
       .user-image-Onloading {
@@ -40,13 +32,20 @@
 
       .user-name,
       .user-name-Onloading {
-        color: white;
         z-index: 10;
         margin: 0 0 0 1.5rem;
 
         h2 {
           font-size: 4rem;
         }
+      }
+
+      .user-name {
+        color: white;
+      }
+
+      .user-name-Onloading {
+        color: #303f9f;
       }
     }
 
@@ -104,5 +103,5 @@
   }
 }
 .cover-Onloading {
-  background: slategrey;
+  background: white;
 }
