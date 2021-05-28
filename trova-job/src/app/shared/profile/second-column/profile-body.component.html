@@ -1,26 +1,12 @@
-<!-- <ng-container *ngIf="(asyncTabs | async) === null">
+<div class="c-links-and-contents">
     <mat-tab-group mat-align-tabs="end">
-        <mat-tab *ngFor="let tab of [1,2,3]">
-            <ng-template mat-tab-label>loading...</ng-template>
-            <div class="c-progress-bar">
-                <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
-            </div>
-            <mat-card class="c-content-loading">
-                <span>
-                    loading ...
-                </span>
+        <mat-tab *ngFor="let tab of asyncTabs | async">
+            <ng-template mat-tab-label>{{tab.label }}</ng-template>
+            <mat-card class="profile-body">
+                <div>
+                    {{tab.content }}
+                </div>
             </mat-card>
         </mat-tab>
     </mat-tab-group>
-</ng-container>
-
-<mat-tab-group mat-align-tabs="end">
-    <mat-tab *ngFor="let tab of asyncTabs | async">
-        <ng-template mat-tab-label>{{tab.label | uppercase }}</ng-template>
-        <mat-card class="profile-body">
-            <div>
-                {{tab.content }}
-            </div>
-        </mat-card>
-    </mat-tab>
-</mat-tab-group> -->
+</div>
