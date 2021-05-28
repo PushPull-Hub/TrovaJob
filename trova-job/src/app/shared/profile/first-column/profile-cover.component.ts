@@ -41,6 +41,6 @@ export class ProfileCoverComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.configurations);
+    // console.log(this.configurations);
   }
 }
