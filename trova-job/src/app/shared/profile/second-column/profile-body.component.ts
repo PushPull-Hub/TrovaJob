@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile-body',
@@ -18,8 +19,8 @@ export class ProfileBodyComponent implements OnInit {
           { label: 'offerts', content: 'offerts-content' },
           { label: 'documents', content: 'documents-contents' },
         ]);
-      }, 500);
-    });
+      }, 2000);
+    }).pipe(shareReplay());
   }
 
   ngOnInit(): void {}

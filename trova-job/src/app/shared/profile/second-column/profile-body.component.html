@@ -1,12 +1,23 @@
 <div class="c-links-and-contents">
     <mat-tab-group mat-align-tabs="end">
-        <mat-tab *ngFor="let tab of asyncTabs | async">
-            <ng-template mat-tab-label>{{tab.label }}</ng-template>
-            <mat-card class="profile-body">
+
+        <ng-template [ngIf]="(asyncTabs | async)?.length > 1" [ngIfElse]="loading">
+            <mat-tab *ngFor="let tab of (asyncTabs | async)">
+                <ng-template mat-tab-label>{{tab.label }}</ng-template>
+                <mat-card class="profile-body">
+                    <div>
+                        {{tab.content }}
+                    </div>
+                </mat-card>
+            </mat-tab>
+        </ng-template>
+
+        <ng-template #loading>
+            <mat-card class="profile-body-loading">
                 <div>
-                    {{tab.content }}
+                    <app-profile-body-loading></app-profile-body-loading>
                 </div>
             </mat-card>
-        </mat-tab>
+        </ng-template>
     </mat-tab-group>
 </div>

@@ -30,6 +30,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ProfileCoverComponent } from './profile/first-column/profile-cover.component';
 import { ProfileBodyComponent } from './profile/second-column/profile-body.component';
 import { ProfileCoverLoadingComponent } from './profile/first-column/profile-cover-loading/profile-cover-loading.component';
+import { ProfileBodyLoadingComponent } from './profile/second-column/profile-body-loading/profile-body-loading.component';
 
 const AngularMaterialModules = [
   MatCardModule,
@@ -60,6 +61,7 @@ const AngularMaterialModules = [
     ProfileCoverComponent,
     ProfileBodyComponent,
     ProfileCoverLoadingComponent,
+    ProfileBodyLoadingComponent,
   ],
   imports: [CommonModule, ...AngularMaterialModules, FontAwesomeModule],
   exports: [
