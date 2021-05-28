@@ -1,6 +1,6 @@
 <div class="main-container">
     <app-nav [configurations]="'defaultConfiguration'"></app-nav>
-    <ng-container *ngIf="false">
+    <ng-container *ngIf="isLoading">
         <mat-progress-bar [mode]="'indeterminate'" color="warn"></mat-progress-bar>
     </ng-container>
 

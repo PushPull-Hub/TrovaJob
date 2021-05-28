@@ -8,9 +8,11 @@ import { ProfileConfiguration } from 'src/app/models/configuration.model';
 })
 export class ProfileComponent implements OnInit {
   configurations: ProfileConfiguration;
+  isLoading: boolean;
   constructor() {}
 
   ngOnInit(): void {
+    this.isLoading = false;
     this.configurations = {
       user: {
         id: 'string',
